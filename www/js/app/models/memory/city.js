@@ -5,7 +5,7 @@ define(function (require) {
     var $                   = require('jquery'),
         Backbone            = require('backbone'),
 
-        city = [
+        cities = [
             {"id": 1, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "name": "Rome", "description": "", "hotelIDs": [1,2,3,4,5]},
             {"id": 2, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Paris-V1.jpg", "name": "Paris", "description": "", "hotelIDs": [5,6,7,8,9]},
             {"id": 3, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Hong-Kong-V1.jpg", "name": "Hong Kong", "description": "", "hotelIDs": [10,11,12,13,14]},
@@ -22,11 +22,11 @@ define(function (require) {
         findById = function (id) {
             var deferred = $.Deferred(),
                 city = null,
-                l = city.length,
+                l = cities.length,
                 i;
             for (i = 0; i < l; i = i + 1) {
-                if (city[i].id === id) {
-                    city = city[i];
+                if (cities[i].id === id) {
+                    city = cities[i];
                     break;
                 }
             }
@@ -36,7 +36,7 @@ define(function (require) {
 
         findByName = function (searchKey) {
             var deferred = $.Deferred(),
-                results = city.filter(function (element) {
+                results = cities.filter(function (element) {
                     
                     return element.name.toLowerCase().indexOf(searchKey.toLowerCase()) > -1;
                 });
