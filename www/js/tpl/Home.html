@@ -1,9 +1,19 @@
 <div class="topcoat-navigation-bar">
     <div class="topcoat-navigation-bar__item center full">
-        <h1 class="topcoat-navigation-bar__title">Employee Directory</h1>
+        <h1 class="topcoat-navigation-bar__title">Venere Deals</h1>
     </div>
 </div>
-<div class="search-bar">
-    <input type="search" placeholder="search" class="topcoat-search-input search-key" style="width:100%;">
+<div class="topcoat-list__container scroller" style="top:138px;">
+    <ul class="topcoat-list list">
+    {{#each employees}}
+        <li class="topcoat-list__item">
+            <a href="#employees/{{ id }}">
+                <img src='pics/{{ firstName }}_{{ lastName }}.jpg'/>
+                <p>{{ firstName }} {{ lastName }}</p>
+                <p>{{ title }}</p>
+                <span class="chevron"></span><span class="count">{{ reports }}</span>
+            </a>
+        </li>
+    {{/each}}
+    </ul>
 </div>
-<div class="topcoat-list__container scroller" style="top:138px;"></div>

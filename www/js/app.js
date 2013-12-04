@@ -20,6 +20,9 @@ require.config({
         },
         'underscore': {
             exports: '_'
+        },
+        'handlebars': {
+            exports: 'Handlebars'
         }
     }
 });
