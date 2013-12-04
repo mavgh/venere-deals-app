@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.example.hello" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloWorld</name>
+    <name>Venere Deals</name>
     <description>
-        A sample Apache Cordova application.
+        Hotels Deals from Venere.com
     </description>
-    <author email="dev@callback.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="xmen@expedia.com" href="http://www.venere.com">
+        Venere XMen Team
     </author>
     <content src="index.html" />
     <access origin="*" />
