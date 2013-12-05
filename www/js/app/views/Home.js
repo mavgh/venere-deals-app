@@ -4,7 +4,7 @@ define(function (require) {
 
     var Backbone            = require('backbone'),
         Handlebars          = require('handlebars'),
-        models              = require('app/models/employee'),
+        models              = require('app/models/theme'),
         tpl                 = require('text!tpl/Home.html'),
 
         template = Handlebars.compile(tpl),cTime,teTime;
@@ -12,13 +12,13 @@ define(function (require) {
     return Backbone.View.extend({
 
         initialize: function () {
-            this.employeeList = new models.EmployeeCollection();
-            this.employeeList.fetch({reset: true, data: {name: 'a'}});
+            this.themeList = new models.ThemeCollection();
+            this.themeList.fetch({reset: true, data: {}});
             this.render();
         },
 
         render: function () {
-            this.$el.html(template({employees: this.employeeList.toJSON()}));
+            this.$el.html(template({themes: this.themeList.toJSON()}));
             return this;
         },
     });

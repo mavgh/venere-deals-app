@@ -4,7 +4,7 @@ define(function (require) {
 
     var $                   = require('jquery'),
         Backbone            = require('backbone'),
-        City                = require('app/model/city'),
+        City                = require('app/models/city'),
 
         themes = [
             {"id": 1, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Rome", "subtitle": "", "cityIDs": [1,2,3,4,5]},
@@ -47,15 +47,26 @@ define(function (require) {
             return deferred.promise();
         },
 
-       
-
-
         Theme = Backbone.Model.extend({
 
-             initialize: function () {
+            initialize: function () {
                 this.cities = new CityCollection();
                 
             },
+            sync: function (method, model, options) {
+                if (method === "read") {
+                    findById(parseInt(this.id)).done(function (data) {
+                        options.success(data);
+                    });
+                }
+            }
+
+        }),
+
+        ThemeCollection = Backbone.Collection.extend({
+
+            model: Theme,
+
             sync: function (method, model, options) {
                 if (method === "read") {
                     findAll().done(function (data) {
@@ -65,8 +76,6 @@ define(function (require) {
             }
 
         }),
-        
-        
         
         CityCollection = Backbone.Collection.extend({
 
@@ -84,6 +93,7 @@ define(function (require) {
 
     return {
         Theme: Theme,
+        ThemeCollection: ThemeCollection,
         CityCollection:CityCollection
     };
 

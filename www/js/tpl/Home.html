@@ -5,13 +5,13 @@
 </div>
 <div class="topcoat-list__container scroller" style="top:138px;">
     <ul class="topcoat-list list">
-    {{#each employees}}
+    {{#each themes}}
         <li class="topcoat-list__item">
-            <a href="#employees/{{ id }}">
-                <img src='pics/{{ firstName }}_{{ lastName }}.jpg'/>
-                <p>{{ firstName }} {{ lastName }}</p>
+            <a href="#theme/{{ id }}">
+                <img src='{{ img }}'/>
+                <p>{{ title }} {{ subtitle }}</p>
                 <p>{{ title }}</p>
-                <span class="chevron"></span><span class="count">{{ reports }}</span>
+                <span class="chevron"></span><span class="count">{{ cityIDs }}</span>
             </a>
         </li>
     {{/each}}

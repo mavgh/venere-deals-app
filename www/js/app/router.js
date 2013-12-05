@@ -38,7 +38,7 @@ define(function (require) {
         },
 
         themeDetails: function (id) {
-            require(["app/models/city", "app/views/Cities"], function (models, CitiesView) {
+            require(["app/models/theme", "app/views/Cities"], function (models, CitiesView) {
                 var theme = new models.Theme({id: id});
                 theme.fetch({
                     success: function (data) {
@@ -47,6 +47,7 @@ define(function (require) {
                 });
             });
         },
+        
         reports: function (id) {
             require(["app/models/employee", "app/views/Reports"], function (models, ReportsView) {
                 var employee = new models.Employee({id: id});
