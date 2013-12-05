@@ -16,7 +16,7 @@ define(function (require) {
             {"id": 8, "name": "Prague", "description": "", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-Prague-V2.jpg"},
             {"id": 9, "name": "Madrid", "description": "", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-Madrid-V1.jpg"},
             {"id": 10, "name": "Munich", "description": "", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Munich-V1.jpg"},
-            {"id": 12, "name": "Dubai", "description": "", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Dubai-V1.jpg"}
+            {"id": 11, "name": "Dubai", "description": "", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Dubai-V1.jpg"}
         ],
 
         findById = function (id) {

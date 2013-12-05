@@ -5,7 +5,7 @@ define(function (require) {
     var $                = require('jquery'),
         _                = require('underscore'),
         Backbone         = require('backbone'),
-        model            = require('app/models/memory/hotel'),   ///Perché devo mettere il tipo di modello?
+        model            = require('app/models/hotel'),
         HotelListView    = require('app/views/HotelList'),
         tpl              = require('text!tpl/Hotels.html'),
 
