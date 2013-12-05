@@ -12,8 +12,8 @@ define(function (require) {
     return Backbone.View.extend({
 
         initialize: function () {
-            this.citiesList = new models.CityCollection({cityIDs: this.model.attributes.cityIDs});
-            this.citiesList.fetch();
+            this.citiesList = new models.CityCollection();
+            this.citiesList.fetch({data:{cityIDs: this.model.attributes.cityIDs}});
             this.render();
         },
 

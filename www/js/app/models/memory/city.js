@@ -50,12 +50,7 @@ define(function (require) {
             return deferred.promise();
         },
 
-       
-
-
         City = Backbone.Model.extend({
-
-
 
             sync: function (method, model, options) {
                 if (method === "read") {
@@ -71,13 +66,9 @@ define(function (require) {
 
             model: City,
 
-            initialize: function (theme) {
-                this.cityIDs=theme.cityIDs;
-            },
-
             sync: function (method, model, options) {
                 if (method === "read") {
-                    findByIDs(this.cityIDs).done(function (data) {
+                    findByIDs(options.data.cityIDs).done(function (data) {
                         options.success(data);
                     });
                 }
