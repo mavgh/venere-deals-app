@@ -16,7 +16,9 @@ define(function (require) {
         routes: {
             "": "home",
             "employees/:id": "employeeDetails",
-            "employees/:id/reports": "reports"
+            "employees/:id/reports": "reports",
+            "theme/:id": "themeDetails"
+            
         },
 
         home: function () {
@@ -35,6 +37,16 @@ define(function (require) {
             });
         },
 
+        themeDetails: function (id) {
+            require(["app/models/city", "app/views/Cities"], function (models, CitiesView) {
+                var theme = new models.Theme({id: id});
+                theme.fetch({
+                    success: function (data) {
+                        slider.slidePage(new CitiesView({model: data.cities}).$el);
+                    }
+                });
+            });
+        },
         reports: function (id) {
             require(["app/models/employee", "app/views/Reports"], function (models, ReportsView) {
                 var employee = new models.Employee({id: id});

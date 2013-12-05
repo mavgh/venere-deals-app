@@ -1,0 +1,12 @@
+<ul class="topcoat-list list">
+<% _.each(cities, function(city) { %>
+    <li class="topcoat-list__item">
+        <a href="#employees/<%= employee.id %>">
+            <img src='<%= city.img %>'/>
+            <p><%= city.name %></p>
+            
+            <span class="chevron"></span><span class="count"></span>
+        </a>
+    </li>
+<% }); %>
+</ul>
