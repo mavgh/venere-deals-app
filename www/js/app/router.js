@@ -18,7 +18,7 @@ define(function (require) {
             "employees/:id": "employeeDetails",
             "employees/:id/reports": "reports",
             "theme/:id": "themeDetails",
-            "cities/:id/hotels": "hotels"
+            "city/:id/hotels": "hotels"
         },
 
         home: function () {
