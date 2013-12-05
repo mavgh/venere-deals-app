@@ -7,7 +7,7 @@ define(function (require) {
         models              = require('app/models/theme'),
         tpl                 = require('text!tpl/Home.html'),
 
-        template = Handlebars.compile(tpl),cTime,teTime;
+        template = Handlebars.compile(tpl);
 
     return Backbone.View.extend({
 

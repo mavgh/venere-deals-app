@@ -2,24 +2,23 @@ define(function (require) {
 
     "use strict";
 
-    var $                   = require('jquery'),
-        _                   = require('underscore'),
-        Backbone            = require('backbone'),
-        CityListView    = require('app/views/CityList'),
+    var Backbone            = require('backbone'),
+        Handlebars          = require('handlebars'),
+        models              = require('app/models/city'),
         tpl                 = require('text!tpl/Cities.html'),
 
-        template = _.template(tpl);
+        template = Handlebars.compile(tpl);
 
     return Backbone.View.extend({
 
         initialize: function () {
+            this.citiesList = new models.CityCollection({cityIDs: this.model.attributes.cityIDs});
+            this.citiesList.fetch();
             this.render();
         },
 
         render: function () {
-            this.$el.html(template(this.model.attributes));
-            this.model.cities.fetch();
-            this.listView = new CityListView({collection: this.model.cities, el: $(".scroller", this.el)});
+            this.$el.html(template({title: this.model.attributes.title, subtitle: this.model.attributes.subtitle, img: this.model.attributes.img, cities: this.citiesList.toJSON()}));
             return this;
         }
 

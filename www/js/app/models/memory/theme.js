@@ -7,10 +7,10 @@ define(function (require) {
         City                = require('app/models/city'),
 
         themes = [
-            {"id": 1, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Rome", "subtitle": "", "cityIDs": [1,2,3,4,5]},
-            {"id": 2, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Rome", "subtitle": "", "cityIDs": [5,6,7,8,9]},
-            {"id": 3, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Rome", "subtitle": "", "cityIDs": [1,2,3,4,5]},
-            {"id": 4, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Rome", "subtitle": "", "cityIDs": [1,2,3,4,5]}
+            {"id": 1, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Winter Sale", "subtitle": "From 20-11-13 to 20-01-14", "cityIDs": [1,2,3,4,5]},
+            {"id": 2, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Christmas Shopping Deals", "subtitle": "From 20-11-13 to 20-01-14", "cityIDs": [5,6,7,8,9]},
+            {"id": 3, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Great value properties", "subtitle": "From 20-11-13 to 20-01-14", "cityIDs": [1,2,3,4,5]},
+            {"id": 4, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Offers for New Year", "subtitle": "From 20-11-13 to 20-01-14", "cityIDs": [1,2,3,4,5]}
             
             
         ],
@@ -36,23 +36,12 @@ define(function (require) {
             deferred.resolve(results);
             return deferred.promise();
         },
-        
-        getCities=function (ids){
-            var deferred = $.Deferred(),cities=[];
-            for(i=0;i<ids.lenght;i++){
-                
-                cities.push(new City({id: ids[i]}));
-            }
-            deferred.resolve(cities);
-            return deferred.promise();
-        },
 
         Theme = Backbone.Model.extend({
 
             initialize: function () {
-                this.cities = new CityCollection();
-                
             },
+
             sync: function (method, model, options) {
                 if (method === "read") {
                     findById(parseInt(this.id)).done(function (data) {
@@ -75,26 +64,11 @@ define(function (require) {
                 }
             }
 
-        }),
-        
-        CityCollection = Backbone.Collection.extend({
-
-            model: City,
-
-            sync: function (method, model, options) {
-                if (method === "read") {
-                    getCities(this.cityIDs).done(function (data) {
-                        options.success(data);
-                    });
-                }
-            }
-
         });
 
     return {
         Theme: Theme,
-        ThemeCollection: ThemeCollection,
-        CityCollection:CityCollection
+        ThemeCollection: ThemeCollection
     };
 
 });

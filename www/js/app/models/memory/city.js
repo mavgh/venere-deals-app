@@ -33,13 +33,19 @@ define(function (require) {
             deferred.resolve(city);
             return deferred.promise();
         },
-
-        findByName = function (searchKey) {
+        
+        findByIDs=function (ids){
             var deferred = $.Deferred(),
-                results = cities.filter(function (element) {
-                    
-                    return element.name.toLowerCase().indexOf(searchKey.toLowerCase()) > -1;
-                });
+            results = cities.filter(function(element) {
+                var isFound = false;
+                for (var i = 0; i < ids.length; i++) {
+                    if (element.id === ids[i]) {
+                        isFound = true;
+                        break;
+                    }
+                }
+                return isFound;
+            });
             deferred.resolve(results);
             return deferred.promise();
         },
@@ -59,10 +65,29 @@ define(function (require) {
                 }
             }
 
+        }),
+        
+        CityCollection = Backbone.Collection.extend({
+
+            model: City,
+
+            initialize: function (theme) {
+                this.cityIDs=theme.cityIDs;
+            },
+
+            sync: function (method, model, options) {
+                if (method === "read") {
+                    findByIDs(this.cityIDs).done(function (data) {
+                        options.success(data);
+                    });
+                }
+            }
+
         });
 
     return {
-        City: City
+        City: City,
+        CityCollection: CityCollection
     };
 
 });

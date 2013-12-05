@@ -42,7 +42,7 @@ define(function (require) {
                 var theme = new models.Theme({id: id});
                 theme.fetch({
                     success: function (data) {
-                        slider.slidePage(new CitiesView({model: data.cities}).$el);
+                        slider.slidePage(new CitiesView({model: data}).$el);
                     }
                 });
             });

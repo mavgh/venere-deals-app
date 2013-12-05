@@ -10,8 +10,20 @@
 </div>
 
 <div class="details">
-    <img src='<%= img %>'/>
-    <h1><%= name %></h1>
+    <img src='{{ img }}'/>
+    <h1>{{ title }} {{ subtitle }}</h1>
 </div>
-
-<div class="topcoat-list__container scroller"></div>
+<div class="topcoat-list__container scroller" style="top:138px;">
+    <ul class="topcoat-list list">
+    {{#each cities}}
+        <li class="topcoat-list__item">
+            <a href="#theme/{{ id }}">
+                <img src='{{ img }}'/>
+                <p>{{ name }} {{ description }}</p>
+                <p>{{ name }}</p>
+                <span class="chevron"></span><span class="count">{{ hotelIDs }}</span>
+            </a>
+        </li>
+    {{/each}}
+    </ul>
+</div>
