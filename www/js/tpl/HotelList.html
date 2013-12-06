@@ -1,0 +1,12 @@
+<ul class="topcoat-list list">
+<% _.each(hotels, function(hotel) { %>
+    <li class="topcoat-list__item">
+        <a href="#hotels/<%= hotel.id %>">
+            <img src='<%= hotel.img %>'/>
+            <p><%= hotel.name %> &nbsp; <img src="pics/stars-<%= hotel.stars %>.png" style="width: auto; height: auto; float: none"/></p>
+            <p><%= hotel.cityZone %></p>
+            <span class="chevron"></span><span class="count"><%= hotel.lowestPrice %></span>
+        </a>
+    </li>
+<% }); %>
+</ul>

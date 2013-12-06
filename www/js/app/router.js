@@ -17,8 +17,8 @@ define(function (require) {
             "": "home",
             "employees/:id": "employeeDetails",
             "employees/:id/reports": "reports",
-            "theme/:id": "themeDetails"
-            
+            "theme/:id": "themeDetails",
+            "city/:id/hotels": "hotels"
         },
 
         home: function () {
@@ -48,6 +48,17 @@ define(function (require) {
             });
         },
         
+        hotels: function (id) {
+            require(["app/models/city", "app/views/Hotels"], function (models, HotelsView) {
+                var city = new models.City({id: id});
+                city.fetch({
+                    success: function (data) {
+                        slider.slidePage(new HotelsView({model: data}).$el);
+                    }
+                });
+            });
+        },
+
         reports: function (id) {
             require(["app/models/employee", "app/views/Reports"], function (models, ReportsView) {
                 var employee = new models.Employee({id: id});
