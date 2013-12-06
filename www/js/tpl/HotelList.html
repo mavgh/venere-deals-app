@@ -1,12 +1,12 @@
 <ul class="topcoat-list list">
-<% _.each(hotels, function(hotel) { %>
+{{#each hotels}}
     <li class="topcoat-list__item">
-        <a href="#hotels/<%= hotel.id %>">
-            <img src='<%= hotel.img %>'/>
-            <p><%= hotel.name %> &nbsp; <img src="pics/stars-<%= hotel.stars %>.png" style="width: auto; height: auto; float: none"/></p>
-            <p><%= hotel.cityZone %></p>
-            <span class="chevron"></span><span class="count"><%= hotel.lowestPrice %></span>
-        </a>
+        <!-- <a href="#hotels/{{ id }}"> -->
+            <img src='{{ img }}'/>
+            <p>{{ name }} &nbsp; <img src="pics/stars-{{ stars }}.png" style="width: auto; height: auto; float: none"/></p>
+            <p>{{ cityZone }}</p>
+            <span class="chevron"></span><span class="count">{{ lowestPrice }}</span>
+        <!-- </a> -->
     </li>
-<% }); %>
+{{/each}}
 </ul>
