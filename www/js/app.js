@@ -9,7 +9,6 @@ require.config({
 
     map: {
         '*': {
-            'app/models/employee':'app/models/memory/employee',
             'app/models/theme':'app/models/memory/theme',
             'app/models/city':'app/models/memory/city',
             'app/models/hotel':'app/models/memory/hotel'

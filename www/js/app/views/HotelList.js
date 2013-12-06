@@ -3,11 +3,11 @@ define(function (require) {
     "use strict";
 
     var $                   = require('jquery'),
-        _                   = require('underscore'),
+        Handlebars          = require('handlebars'),
         Backbone            = require('backbone'),
         tpl                 = require('text!tpl/HotelList.html'),
 
-        template = _.template(tpl);
+        template = Handlebars.compile(tpl);
 
     return Backbone.View.extend({
 
