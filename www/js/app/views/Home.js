@@ -23,7 +23,9 @@ define(function (require) {
     return Backbone.View.extend({
 
         initialize: function () {
-            window.addEventListener('orientationchange', this.checkOrientationAndRender, false);
+            var supportsOrientationChange = "onorientationchange" in window,
+                orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+            window.addEventListener(orientationEvent, this.checkOrientationAndRender, false);
 //            $(window).on("resize", this.doOnOrientationChange);
             this.themeList = new models.ThemeCollection();
             this.themeList.fetch({reset: true, data: {}});
@@ -36,11 +38,19 @@ define(function (require) {
             return this;
         },
         
-        checkOrientationAndRender: function (event) {
-            if (window.orientation === -90 || window.orientation === 90) {
-                template = template_ls;
+        checkOrientationAndRender: function(event) {
+            if (window.orientation) {
+                if (window.orientation === -90 || window.orientation === 90) {
+                    template = template_ls;
+                } else {
+                    template = template_pt;
+                }
             } else {
-                template = template_pt;
+                if (window.innerWidth > window.InnerHeight) {
+                    template = template_ls;
+                } else {
+                    template = template_pt;
+                }
             }
             view.render();
         }

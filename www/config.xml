@@ -8,7 +8,7 @@
         Venere XMen Team
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="*" subdomains="true" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
 </widget>

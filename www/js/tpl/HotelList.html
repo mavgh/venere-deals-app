@@ -2,10 +2,10 @@
 {{#each hotels}}
     <li class="topcoat-list__item">
         <!-- <a href="#hotels/{{ id }}"> -->
-            <img src='{{ img }}'/>
-            <p>{{ name }} &nbsp; <img src="pics/stars-{{ stars }}.png" style="width: auto; height: auto; float: none"/></p>
-            <p>{{ cityZone }}</p>
-            <span class="chevron"></span><span class="count">{{ lowestPrice }}</span>
+            <img src='{{ PropertyDetails.photoURL }}'/>
+            <p>{{ PropertyDetails.name }} &nbsp; <img src="pics/stars-{{ PropertyDetails.category }}.png" style="width: auto; height: auto; float: none"/></p>
+            <p>{{ PropertyDetails.address }}</p>
+            <span class="chevron"></span><span class="count">{{ AvailStays.AvailStay.totalPrice }}</span>
         <!-- </a> -->
     </li>
 {{/each}}

@@ -1,0 +1,52 @@
+define(function (require) {
+
+    "use strict";
+
+    var Backbone            = require('backbone'),
+
+        Hotel = Backbone.Model.extend({
+
+            urlRoot: "http://java-acme.dev.venere.it/area0-node0/xhi-1.0/services/XHI_HotelAvail.json?",
+
+            initialize: function () {
+                this.reports = new HotelCollection();
+                this.reports.url = this.urlRoot + "/" + this.id + "/reports";
+            }
+
+        }),
+
+        HotelCollection = Backbone.Collection.extend({
+
+            model: Hotel,
+            
+            urlRoot: "http://java-acme.dev.venere.it/area0-node0/xhi-1.0/services/XHI_HotelAvail.json?",
+
+            fetch: function(options) {
+
+                //do specific pre-processing 
+                
+//                this.url = urlRoot + '{"XHI_HotelAvailRQ":{"guestCountryCode":"${guestCountryCode}","preferredPaymentCurrency":"${preferredPaymentCurrency}","msgEchoToken":"EchoTest","msgVersion":"1.00.004","start":"${CheckIn}","end":"${CheckOut}","numGuests":"2","numRooms":"1",avoidCache="false","AvailQueryByGeo":{"geoIDs":"${geoIDs}"},"AvailResultFormat":{"maxResultItems":"${maxResultItems}","offsetResultItems":"${offsetResultItems}","showPropertyDetails":"true","showDailyRates":"true","showRoomCancellationPolicies":"false","langID":"${langID}","orderBy":"category","orderDir":"desc"}}}';
+                this.url = this.urlRoot + '{"XHI_HotelAvailRQ":{"guestCountryCode":"IT","preferredPaymentCurrency":"EUR","msgEchoToken":"EchoTest","msgVersion":"1.00.004","start":"2014-01-04","end":"2014-01-05","numGuests":"2","numRooms":"1",avoidCache="false","AvailQueryByGeo":{"geoIDs":"561"},"AvailResultFormat":{"maxResultItems":"10","offsetResultItems":"0","showPropertyDetails":"true","showDailyRates":"true","showRoomCancellationPolicies":"false","langID":"it","orderBy":"category","orderDir":"desc"}}}';
+
+                //Call Backbone's fetch
+                return Backbone.Collection.prototype.fetch.call(this, options);
+            },
+
+            parse: function(response, options) {
+
+                //do specific pre-processing 
+                
+                console.log(JSON.stringify(response.XHI_HotelAvailRS.AvailResults.AvailResult));
+                //Call Backbone's fetch
+                options.success = true;
+                return Backbone.Collection.prototype.parse.call(this, response.XHI_HotelAvailRS.AvailResults.AvailResult, options);
+            }
+
+        });
+
+    return {
+        Hotel: Hotel,
+        HotelCollection: HotelCollection
+    };
+
+});

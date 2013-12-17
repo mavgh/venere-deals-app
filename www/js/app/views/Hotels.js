@@ -15,7 +15,7 @@ define(function (require) {
 
         initialize: function () {
             this.hotels = new model.HotelCollection();
-            this.hotels.fetch({ data: { cityID: this.model.attributes.id} });
+            this.hotels.fetch({ reset:true, data: { cityID: this.model.attributes.id} });
             this.render();
         },
 

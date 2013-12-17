@@ -11,7 +11,7 @@ require.config({
         '*': {
             'app/models/theme':'app/models/memory/theme',
             'app/models/city':'app/models/memory/city',
-            'app/models/hotel':'app/models/memory/hotel'
+            'app/models/hotel':'app/models/json/hotel'
         }
     },
 
@@ -31,6 +31,15 @@ require.config({
 
 require(['jquery', 'backbone', 'app/router', 'fastclick'], function ($, Backbone, Router) {
 
+    //Setup header Authorization (venere_tester)
+    $.ajaxSetup({
+        headers: {
+            'Authorization':'Basic dmVuZXJlX3Rlc3RlckBFeHBlZGlhOngxeDJ4Mw=='
+        }
+    });
+//    Access-Control-Allow-Origin: *
+//Access-Control-Allow-Methods: GET, POST, PUT, DELETE
+//Access-Control-Allow-Headers: Authorization
     var router = new Router();
 
     $("body").on("click", ".back-button", function (event) {
