@@ -6,17 +6,17 @@ define(function (require) {
         Backbone = require('backbone'),
 
         cities = [
-            {"id": 1, "name": "Milan", "description": "The city that never sleeps", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Milan-V1.jpg"},
-            {"id": 2, "name": "Paris", "description": "The city of love and lights", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Paris-V1.jpg"},
-            {"id": 3, "name": "Hong Kong", "description": "Simply surprising", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Hong-Kong-V1.jpg"},
-            {"id": 4, "name": "Berlin", "description": "The greatest cultural extravaganza that one could imagine", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-Berlin-V1.jpg"},
-            {"id": 5, "name": "London", "description": "The world in one city", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-London-V1.jpg"},
-            {"id": 6, "name": "Rome", "description": "The eternal city", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg"},
-            {"id": 7, "name": "New York", "description": "You'll love it!", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-NewYork-V1.jpg"},
-            {"id": 8, "name": "Prague", "description": "Inspiring, modern, mysterious, magic", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-Prague-V2.jpg"},
-            {"id": 9, "name": "Madrid", "description": "Tourist friendly", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-Madrid-V1.jpg"},
-            {"id": 10, "name": "Munich", "description": "Germany’s secret capital", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Munich-V1.jpg"},
-            {"id": 11, "name": "Dubai", "description": "City of wonders", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Dubai-V1.jpg"}
+            {"id": 1, "geoID": "303", "name": "Milan", "description": "The city that never sleeps", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Milan-V1.jpg"},
+            {"id": 2, "geoID": "5285", "name": "Paris", "description": "The city of love and lights", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Paris-V1.jpg"},
+            {"id": 3, "geoID": "558106", "name": "Hong Kong", "description": "Simply surprising", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Hong-Kong-V1.jpg"},
+            {"id": 4, "geoID": "5219", "name": "Berlin", "description": "The greatest cultural extravaganza that one could imagine", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-Berlin-V1.jpg"},
+            {"id": 5, "geoID": "1509", "name": "London", "description": "The world in one city", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-London-V1.jpg"},
+            {"id": 6, "geoID": "3425", "name": "Rome", "description": "The eternal city", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg"},
+            {"id": 7, "geoID": "41437", "name": "New York", "description": "You'll love it!", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-NewYork-V1.jpg"},
+            {"id": 8, "geoID": "43505", "name": "Prague", "description": "Inspiring, modern, mysterious, magic", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-Prague-V2.jpg"},
+            {"id": 9, "geoID": "1611", "name": "Madrid", "description": "Tourist friendly", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S2-Madrid-V1.jpg"},
+            {"id": 10, "geoID": "43469", "name": "Munich", "description": "Germany’s secret capital", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Munich-V1.jpg"},
+            {"id": 11, "geoID": "562486", "name": "Dubai", "description": "City of wonders", "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Dubai-V1.jpg"}
         ],
 
         findById = function (id) {

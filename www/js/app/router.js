@@ -8,6 +8,8 @@ define(function (require) {
         HomeView    = require('app/views/Home'),
 
         slider = new PageSlider($('body')),
+        
+        startDate   = "",
 
         homeView = new HomeView();
 
@@ -27,8 +29,10 @@ define(function (require) {
         themeDetails: function (id) {
             require(["app/models/theme", "app/views/Cities"], function (models, CitiesView) {
                 var theme = new models.Theme({id: id});
+                
                 theme.fetch({
                     success: function (data) {
+                        startDate=data.attributes.start;
                         slider.slidePage(new CitiesView({model: data}).$el);
                     }
                 });
@@ -40,7 +44,7 @@ define(function (require) {
                 var city = new models.City({id: id});
                 city.fetch({
                     success: function (data) {
-                        slider.slidePage(new HotelsView({model: data}).$el);
+                        slider.slidePage(new HotelsView({model: data, startDate: startDate}).$el);
                     }
                 });
             });

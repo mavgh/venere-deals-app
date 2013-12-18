@@ -12,7 +12,7 @@ define(function (require) {
     return Backbone.View.extend({
 
         initialize: function () {
-            this.render();
+            $('<div class=loadingDiv>loading...</div>').prependTo(this.$el);
             this.collection.on("reset", this.render, this);
         },
 

@@ -42,7 +42,11 @@ define(function (require) {
             if (window.orientation === -90 || window.orientation === 90) {
                 template = template_ls;
             } else {
-                template = template_pt;
+                if (window.innerWidth > window.InnerHeight) {
+                    template = template_ls;
+                } else {
+                    template = template_pt;
+                }
             }
             view.render();
         },
