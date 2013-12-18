@@ -19,8 +19,8 @@ define(function (require) {
 
             model: Hotel,
             
-            urlRoot: "http://java-acme.dev.venere.it/area0-node0/xhi-1.0/services/XHI_HotelAvail.json?",
-
+            //urlRoot: "http://java-acme.dev.venere.it/area0-node0/xhi-1.0/services/XHI_HotelAvail.json?",
+            urlRoot: "https://api.venere.com/xhi-1.0/services/XHI_HotelAvail.json?",
             fetch: function(options) {
 
                 //do specific pre-processing 
