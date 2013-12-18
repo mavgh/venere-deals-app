@@ -191,3 +191,14 @@ ul {
     bottom: 0;
     overflow: hidden;
 }
+
+.loadingDiv {
+    position: relative;
+    width: "100%";
+    height: "100%";
+    background:  #FFF;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50); /* IE filter */
+    -moz-opacity:0.5;    /* Mozilla extension */
+    -khtml-opacity:0.5;  /* Safari/Conqueror extension */
+    opacity:0.5; /* CSS3 */
+}

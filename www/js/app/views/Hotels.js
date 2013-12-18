@@ -13,10 +13,10 @@ define(function (require) {
 
     return Backbone.View.extend({
 
-        initialize: function () {
+        initialize: function (options) {
             this.hotels = new model.HotelCollection();
-            this.hotels.fetch({ reset:true, data: { cityID: this.model.attributes.id} });
             this.render();
+            this.hotels.fetch({ reset:true, data: { geoID: this.model.attributes.geoID, startDate: options.startDate} });
         },
 
         render: function () {

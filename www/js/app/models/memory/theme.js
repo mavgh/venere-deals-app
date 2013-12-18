@@ -7,10 +7,10 @@ define(function (require) {
         City                = require('app/models/city'),
 
         themes = [
-            {"id": 1, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Winter Sale", "subtitle": "From 20-11-13 to 20-01-14", "cityIDs": [1,2,3,4,5]},
-            {"id": 2, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Christmas Shopping Deals", "subtitle": "From 20-11-13 to 20-01-14", "cityIDs": [6,7,8,9,10]},
-            {"id": 3, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Great value properties", "subtitle": "From 20-11-13 to 20-01-14", "cityIDs": [11,9,7,5,3,1]},
-            {"id": 4, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Offers for New Year", "subtitle": "From 20-11-13 to 20-01-14", "cityIDs": [10,8,6,4,2]}
+            {"id": 1, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Winter Sale", "subtitle": "From 20-11-13 to 20-01-14", "start": "2014-01-06", "cityIDs": [1,2,3,4,5]},
+            {"id": 2, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Christmas Shopping Deals", "subtitle": "From 20-11-13 to 20-01-14", "start": "2013-12-23", "cityIDs": [6,7,8,9,10]},
+            {"id": 3, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Great value properties", "subtitle": "From 20-11-13 to 20-01-14", "start": "2013-12-21", "cityIDs": [11,9,7,5,3,1]},
+            {"id": 4, "img": "http://img.venere.com/img/hotel-deals/Destination-Page/DP-S3-Rome-V1.jpg", "title": "Offers for New Year", "subtitle": "From 20-11-13 to 20-01-14", "start": "2014-01-01", "cityIDs": [10,8,6,4,2]}
             
             
         ],

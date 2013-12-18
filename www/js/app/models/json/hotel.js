@@ -26,8 +26,11 @@ define(function (require) {
                 //do specific pre-processing 
                 
 //                this.url = urlRoot + '{"XHI_HotelAvailRQ":{"guestCountryCode":"${guestCountryCode}","preferredPaymentCurrency":"${preferredPaymentCurrency}","msgEchoToken":"EchoTest","msgVersion":"1.00.004","start":"${CheckIn}","end":"${CheckOut}","numGuests":"2","numRooms":"1",avoidCache="false","AvailQueryByGeo":{"geoIDs":"${geoIDs}"},"AvailResultFormat":{"maxResultItems":"${maxResultItems}","offsetResultItems":"${offsetResultItems}","showPropertyDetails":"true","showDailyRates":"true","showRoomCancellationPolicies":"false","langID":"${langID}","orderBy":"category","orderDir":"desc"}}}';
-                this.url = this.urlRoot + '{"XHI_HotelAvailRQ":{"guestCountryCode":"IT","preferredPaymentCurrency":"EUR","msgEchoToken":"EchoTest","msgVersion":"1.00.004","start":"2014-01-04","end":"2014-01-05","numGuests":"2","numRooms":"1",avoidCache="false","AvailQueryByGeo":{"geoIDs":"561"},"AvailResultFormat":{"maxResultItems":"10","offsetResultItems":"0","showPropertyDetails":"true","showDailyRates":"true","showRoomCancellationPolicies":"false","langID":"it","orderBy":"category","orderDir":"desc"}}}';
-
+                this.url = this.urlRoot + '{"XHI_HotelAvailRQ":{"guestCountryCode":"IT","preferredPaymentCurrency":"EUR","msgEchoToken":"VenereDealTest","msgVersion":"1.00.004",'
+                        +'"start":"'+options.data.startDate+'","duration":"P1D","numGuests":"2","numRooms":"1",avoidCache="false","AvailQueryByGeo":{"geoIDs":"'+options.data.geoID+'"},'
+                        +'"AvailResultFormat":{"maxResultItems":"10","offsetResultItems":"0","showPropertyDetails":"true","showDailyRates":"true",'
+                        +'"showRoomCancellationPolicies":"false","langID":"it","orderBy":"category","orderDir":"desc"}}}';
+                console.log("Sending request:"+this.url);
                 //Call Backbone's fetch
                 return Backbone.Collection.prototype.fetch.call(this, options);
             },
