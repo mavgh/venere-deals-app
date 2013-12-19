@@ -7,7 +7,7 @@ define(function (require) {
         PageSlider  = require('app/utils/pageslider'),
         HomeView    = require('app/views/Home'),
 
-        slider = new PageSlider($('body')),
+        slider = new PageSlider($('#wrapper')),
         
         startDate   = "",
 
