@@ -7,7 +7,7 @@
                 <img src="pics/stars-{{ PropertyDetails.category }}.png" style="width: auto; height: auto; float: none"/>
             </p>
             <p>{{ PropertyDetails.address }}</p>
-            <span class="chevron"></span><span class="count">{{ PropertyDetails.minCostOfStay }}€</span>
+            <span class="chevron"></span><span class="count">{{ AvailStays.AvailStay.[0].PriceInfo.displayPrice }}€</span>
         <!-- </a> -->
     </li>
 {{/each}}
