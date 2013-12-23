@@ -124,6 +124,13 @@ $headerDelta  : 4px;
     position: absolute;
     z-index: 1;
 }
+.theme-subtitle .description {
+   display: block;
+}
+.theme-subtitle .landscape {
+   display: none;
+}
+
 /*card subtitle right icon*/
 $iconWidth : 30px;
 .theme-subtitle:after {
@@ -149,5 +156,30 @@ and (min-width : 550px)
       width: $squaredCard;
       float: left;
       clear: none;
+   }
+   .theme-pic {
+      border-top: none;
+   }
+   .theme-title {
+       background: none repeat scroll 0 0 #FFA500;
+       bottom: 0;
+       left: 0;
+       padding: 6px 0 70px 12px;
+       position: absolute;
+       right: 0;
+       width: auto;
+       z-index: 1;
+   }   
+   .theme-subtitle {
+      height: 23px;
+   }
+   .theme-subtitle:after {
+      height: 35px;
+   }
+   .theme-subtitle .description {
+      display: none;
+   }
+   .theme-subtitle .landscape {
+      display: block;
    }
 }
