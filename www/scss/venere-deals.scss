@@ -139,3 +139,15 @@ $iconWidth : 30px;
 
 
 /*DEAL CARDS LANDSCAPE*/
+$squaredCard : 280px;
+@media screen 
+and (min-width : 550px) 
+/*and (orientation : landscape) */ {
+   .list li,
+   .topcoat-list__item {
+      height: $squaredCard;
+      width: $squaredCard;
+      float: left;
+      clear: none;
+   }
+}
