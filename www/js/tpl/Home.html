@@ -8,9 +8,9 @@
     {{#each themes}}
         <li class="topcoat-list__item">
             <a href="#theme/{{ id }}">
-                <img src='{{ img }}'/>
-                <p>{{ title }}</p>
-                <p> {{ subtitle }}</p>
+                <p class="theme-title">{{ title }}</p>
+                <span class="theme-subtitle">{{ subtitle }}</span>
+                <div class="theme-pic" style='background-image:url({{ img }})'></div>
             </a>
         </li>
     {{/each}}

@@ -10,9 +10,12 @@ and open the template in the editor.
 
 /*COLORS*/
 $navHeading : #222;
-
-
-
+$appBkColor : #e9e9e9;
+/*deals colors*/
+$dealNewYear    : #875bcf;
+$dealXmasMarket : #d1090d;
+$dealXmasShop   : #7f5010;
+$dealWinterSale : #6282e7;
 
 .topcoat-navigation-bar {
 background: #f9f9fa;
@@ -23,6 +26,7 @@ background: -o-linear-gradient(top,  #f9f9fa 0%,#f4f3f4 19%,#d9d4d4 74%,#d4cece 
 background: -ms-linear-gradient(top,  #f9f9fa 0%,#f4f3f4 19%,#d9d4d4 74%,#d4cece 93%,#d4cece 100%);
 background: linear-gradient(to bottom,  #f9f9fa 0%,#f4f3f4 19%,#d9d4d4 74%,#d4cece 93%,#d4cece 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9fa', endColorstr='#d4cece',GradientType=0 );
+box-shadow: none;
 }
 .topcoat-navigation-bar:after {
     background: url('images/venere_deal_logo.png') scroll no-repeat right 0 transparent;
@@ -32,14 +36,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9fa', end
     height: 36px;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 1px;
     width: 155px;
     z-index: 1;
 }
 
-
 .topcoat-navigation-bar__title {
    color: $navHeading;
+}
+
+
+body,
+#wrapper,
+.topcoat-list__container {
+   background-color: $appBkColor;
 }
 
 /* Reduce header size */
@@ -77,3 +87,55 @@ $headerDelta  : 4px;
     line-height: ($headerHeight - $headerDelta);
     margin: ($headerDelta / 2) 0 0;
 }
+
+
+
+
+/*DEAL CARDS*/
+.topcoat-list__item:first-child {
+   border: none;
+}
+.list li,
+.topcoat-list__item {
+   border: none;
+   padding: 0 !important;
+   margin: 21px;
+   
+}
+
+.theme-pic {
+   border-top: 4px solid #FFF;
+   background-size: cover;
+   display: block;
+   width: 100%;
+   height: 280px;
+   position: relative;
+}
+
+.theme-title {
+   
+}
+.theme-subtitle {
+    background: none repeat scroll 0 0 #FFFFFF;
+    bottom: 25px;
+    height: 63px; /*can be removed for flexible content if no card icon on the right*/
+    margin: 0 120px 0 0;
+    padding: 6px 18px;
+    position: absolute;
+    z-index: 1;
+}
+/*card subtitle right icon*/
+$iconWidth : 30px;
+.theme-subtitle:after {
+    background: none repeat scroll 0 0 #FF0000;
+    content: "";
+    display: block;
+    height: 75px;
+    position: absolute;
+    right: -$iconWidth;
+    top: 0;
+    width: $iconWidth;
+}
+
+
+/*DEAL CARDS LANDSCAPE*/

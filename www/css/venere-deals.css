@@ -8,6 +8,7 @@ and open the template in the editor.
     Author     : srescio
 */
 /*COLORS*/
+/*deals colors*/
 .topcoat-navigation-bar {
   background: #f9f9fa;
   background: -moz-linear-gradient(top, #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
@@ -16,7 +17,8 @@ and open the template in the editor.
   background: -o-linear-gradient(top, #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
   background: -ms-linear-gradient(top, #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
   background: linear-gradient(to bottom, #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9fa', endColorstr='#d4cece',GradientType=0 ); }
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9fa', endColorstr='#d4cece',GradientType=0 );
+  box-shadow: none; }
 
 .topcoat-navigation-bar:after {
   background: url("images/venere_deal_logo.png") scroll no-repeat right 0 transparent;
@@ -26,12 +28,17 @@ and open the template in the editor.
   height: 36px;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 1px;
   width: 155px;
   z-index: 1; }
 
 .topcoat-navigation-bar__title {
   color: #222222; }
+
+body,
+#wrapper,
+.topcoat-list__container {
+  background-color: #e9e9e9; }
 
 /* Reduce header size */
 .topcoat-navigation-bar,
@@ -61,3 +68,44 @@ and open the template in the editor.
   text-shadow: none;
   line-height: 32px;
   margin: 2px 0 0; }
+
+/*DEAL CARDS*/
+.topcoat-list__item:first-child {
+  border: none; }
+
+.list li,
+.topcoat-list__item {
+  border: none;
+  padding: 0 !important;
+  margin: 21px; }
+
+.theme-pic {
+  border-top: 4px solid #FFF;
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: 280px;
+  position: relative; }
+
+.theme-subtitle {
+  background: none repeat scroll 0 0 #FFFFFF;
+  bottom: 25px;
+  height: 63px;
+  /*can be removed for flexible content if no card icon on the right*/
+  margin: 0 120px 0 0;
+  padding: 6px 18px;
+  position: absolute;
+  z-index: 1; }
+
+/*card subtitle right icon*/
+.theme-subtitle:after {
+  background: none repeat scroll 0 0 #FF0000;
+  content: "";
+  display: block;
+  height: 75px;
+  position: absolute;
+  right: -30px;
+  top: 0;
+  width: 30px; }
+
+/*DEAL CARDS LANDSCAPE*/
