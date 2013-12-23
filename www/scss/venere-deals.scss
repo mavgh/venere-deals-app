@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23-dic-2013, 11.59.01
+    Author     : srescio
+*/
+
+/*COLORS*/
+$navHeading : #222;
+
+
+
+
+.topcoat-navigation-bar {
+background: #f9f9fa;
+background: -moz-linear-gradient(top,  #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9fa), color-stop(19%,#f4f3f4), color-stop(74%,#d9d4d4), color-stop(93%,#d4cece), color-stop(100%,#d4cece));
+background: -webkit-linear-gradient(top,  #f9f9fa 0%,#f4f3f4 19%,#d9d4d4 74%,#d4cece 93%,#d4cece 100%);
+background: -o-linear-gradient(top,  #f9f9fa 0%,#f4f3f4 19%,#d9d4d4 74%,#d4cece 93%,#d4cece 100%);
+background: -ms-linear-gradient(top,  #f9f9fa 0%,#f4f3f4 19%,#d9d4d4 74%,#d4cece 93%,#d4cece 100%);
+background: linear-gradient(to bottom,  #f9f9fa 0%,#f4f3f4 19%,#d9d4d4 74%,#d4cece 93%,#d4cece 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9fa', endColorstr='#d4cece',GradientType=0 );
+}
+.topcoat-navigation-bar:after {
+    background: url('images/venere_deal_logo.png') scroll no-repeat right 0 transparent;
+    background-size: auto 100%;
+    content: "";
+    display: block;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 155px;
+    z-index: 1;
+}
+
+
+.topcoat-navigation-bar__title {
+   color: $navHeading;
+}
+
+/* Reduce header size */
+$headerHeight : 36px;
+$headerDelta  : 4px;
+
+.topcoat-navigation-bar,
+.topcoat-navigation-bar__item {
+   height: $headerHeight;
+}
+
+.topcoat-list__container {
+   top: $headerHeight !important;
+}
+.topcoat-navigation-bar__item {
+   line-height: $headerHeight;
+}
+
+.topcoat-icon-button,
+.topcoat-icon-button--quiet,
+.topcoat-icon-button--large,
+.topcoat-icon-button--large--quiet {
+   border: none;
+   line-height: $headerHeight;
+}
+
+.topcoat-icon-button--quiet:active,
+.topcoat-icon-button--quiet.is-active,
+.topcoat-icon-button--large--quiet:active,
+.topcoat-icon-button--large--quiet.is-active {
+    border: none;
+    box-shadow: none;
+    color: #C6C8C8;
+    text-shadow: none;
+    line-height: ($headerHeight - $headerDelta);
+    margin: ($headerDelta / 2) 0 0;
+}
