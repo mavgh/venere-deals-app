@@ -7,9 +7,9 @@
     <ul class="topcoat-list list">
     {{#each themes}}
         <li class="topcoat-list__item">
-            <a href="#theme/{{ id }}">
+            <a href="#theme/{{ id }}" class="theme-{{ color }}">
                 <p class="theme-title">{{ title }}</p>
-                <span class="theme-subtitle"><span class="description">{{ subtitle }}</span><span class="landscape">Book now</span></span>
+                <span class="theme-subtitle vicons-labelhollow"><span class="description">{{ subtitle }}</span><span class="landscape">Book now</span></span>
                 <div class="theme-pic" style='background-image:url({{ img }})'></div>
             </a>
         </li>
