@@ -100,31 +100,31 @@ $headerDelta  : 4px;
 .topcoat-list__item {
    border: none;
    padding: 0 !important;
-   margin: 21px;
+   margin: 5px 10px 13px;
    
 }
 
 /*CARDS PORTATRAIT SHADOW*/
 .topcoat-list__item:before {
-    background-color: #666666;
-    bottom: 0;
-    box-shadow: 7px 2px 6px #666666;
+    background-color: rgba(0, 0, 0, 0.45);
+    bottom: 15px;
+    box-shadow: 12px 19px 6px  rgba(0, 0, 0, 0.45);
     content: "";
     display: block;
     height: 90px;
     position: absolute;
-    right: 11px;
+    right: 15px;
     -webkit-transform: rotate(1deg);
-    transform: rotate(1deg);
+    transform: rotate(2deg);
     width: 80%;
 }
 
 .theme-pic {
-   border-top: 4px solid #666;
+   border-top: 2px solid #666;
    background-size: cover;
    display: block;
    width: 100%;
-   height: 200px;
+   height: 140px;
    position: relative;
 }
 
@@ -136,10 +136,10 @@ $headerDelta  : 4px;
 }
 .theme-subtitle {
     background: none repeat scroll 0 0 #666;
-    bottom: 25px;
+    bottom: 13px;
     color: #FFF;
     font-style: italic;
-    height: 50px; /*can be removed for flexible content if no card icon on the right*/
+    height: 38px; /*can be removed for flexible content if no card icon on the right*/
     margin: 0 120px 0 0;
     opacity: 0.9;
     padding: 6px 0 6px 18px;
@@ -148,8 +148,9 @@ $headerDelta  : 4px;
 }
 .theme-subtitle .description {
     display: block;
-    font-size: 13px;
+    font-size: 12px;
     height: 100%;
+    line-height: 13px;
     overflow: hidden;
 }
 .theme-subtitle .landscape {
@@ -157,8 +158,8 @@ $headerDelta  : 4px;
 }
 
 /*card subtitle right icon*/
-$iconWidth : 70px;
-$IconSize : 62px;
+$iconWidth : 40px;
+$IconSize : 50px;
 .theme-subtitle:after {
     content: "";
     color: #666;
@@ -235,7 +236,7 @@ and (min-width : 550px)
    }
    .theme-subtitle:before {
        background-color: #000000;
-       bottom: -9px;
+       bottom: -5px;
        content: "";
        height: 0;
        left: -19px;
@@ -245,7 +246,7 @@ and (min-width : 550px)
    .theme-subtitle:before {
       background-color: transparent;
       border-style: solid;
-      border-width: 0 9px 9px 0;
+      border-width: 0 9px 5px 0;
       border-color: transparent #000000 transparent transparent;
       border-style: inset;
       width: 0px;
