@@ -119,7 +119,7 @@ $headerDelta  : 4px;
     width: 80%;
 }
 
-.theme-pic {
+.card-pic {
    border-top: 2px solid #666;
    background-size: cover;
    display: block;
@@ -128,13 +128,13 @@ $headerDelta  : 4px;
    position: relative;
 }
 
-.theme-title {
+.card-title {
    color: #666;
    font-size: 20px;
    font-weight: 100 !important;
    text-shadow: 1px 0 0 #FFFFFF;
 }
-.theme-subtitle {
+.card-subtitle {
     background: none repeat scroll 0 0 #666;
     bottom: 13px;
     color: #FFF;
@@ -146,21 +146,21 @@ $headerDelta  : 4px;
     position: absolute;
     z-index: 1;
 }
-.theme-subtitle .description {
+.card-subtitle .description {
     display: block;
     font-size: 12px;
     height: 100%;
     line-height: 13px;
     overflow: hidden;
 }
-.theme-subtitle .landscape {
+.card-subtitle .landscape {
    display: none;
 }
 
 /*card subtitle right icon*/
 $iconWidth : 40px;
 $IconSize : 50px;
-.theme-subtitle:after {
+.card-subtitle:after {
     content: "";
     color: #666;
     display: block;
@@ -175,21 +175,21 @@ $IconSize : 50px;
 
 
 /*THEMES COLORS*/
-$theme: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, orange #e87c24;
+$card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, orange #e87c24;
 
-@each $color in $theme {
-   .theme-#{nth($color, 1)} {
+@each $color in $card {
+   .card-#{nth($color, 1)} {
 
-      .theme-title {
+      .card-title {
          color: darken( nth($color, 2), 20% );
       }
-      .theme-subtitle {
+      .card-subtitle {
          background-color: nth($color, 2);
       }
-      .theme-subtitle:after {
+      .card-subtitle:after {
          color: nth($color, 2);
       }
-      .theme-pic {
+      .card-pic {
          border-color: nth($color, 2);
       }
 
@@ -214,11 +214,11 @@ and (min-width : 550px)
    .topcoat-list__item:before {
       content: none;
    }
-   .theme-pic {
+   .card-pic {
       border-top: none;
       height: 100%;
    }
-   .theme-title {
+   .card-title {
        background-color: rgba(255,255,255, 0.70);
        bottom: 0;
        left: 0;
@@ -232,7 +232,7 @@ and (min-width : 550px)
    }
    
    $arrowWidth:5px;
-   .theme-subtitle {
+   .card-subtitle {
       bottom: ( ($arrowWidth / 2) + 4px);
       height: 10px;
       margin: 0 0 0 (-$arrowWidth);
@@ -240,7 +240,7 @@ and (min-width : 550px)
       padding: 4px 0 8px 11px;
       box-shadow: 1px 3px 3px 3px rgba(0, 0, 0, 0.26);
    }
-   .theme-subtitle:before {
+   .card-subtitle:before {
        background-color: #000000;
        bottom: -$arrowWidth;
        content: "";
@@ -249,7 +249,7 @@ and (min-width : 550px)
        position: absolute;
        width: 0;
    }
-   .theme-subtitle:before {
+   .card-subtitle:before {
       background-color: transparent;
       border-style: solid;
       border-width: 0 $arrowWidth ($arrowWidth / 2) 0;
@@ -260,13 +260,13 @@ and (min-width : 550px)
       -webkit-transform:rotate(360deg);
    }
    
-   .theme-subtitle:after {
+   .card-subtitle:after {
       text-shadow: 4px 2px 3px rgba(0, 0, 0, 0.26);
       top: 1px;
    }
    
    
-   .theme-subtitle .landscape {
+   .card-subtitle .landscape {
       font-size: 11px;
       font-weight: 400;
       padding: 0 21px 0 0;
@@ -274,15 +274,15 @@ and (min-width : 550px)
    }
    
    $smallerLabel : 22px;
-   .theme-subtitle:after {
+   .card-subtitle:after {
       height: $smallerLabel;
       font-size: $smallerLabel;
       right: -(($iconWidth / 2) + 5px);
    }
-   .theme-subtitle .description {
+   .card-subtitle .description {
       display: none;
    }
-   .theme-subtitle .landscape {
+   .card-subtitle .landscape {
       display: block;
    }
 }
