@@ -18,7 +18,7 @@ define(function (require) {
         },
 
         render: function () {
-            this.$el.html(template({title: this.model.attributes.title, subtitle: this.model.attributes.subtitle, img: this.model.attributes.img, cities: this.citiesList.toJSON()}));
+            this.$el.html(template({title: this.model.attributes.title, subtitle: this.model.attributes.subtitle, img: this.model.attributes.img, cities: this.citiesList.toJSON(), color: this.model.attributes.color}));
             return this;
         }
 
