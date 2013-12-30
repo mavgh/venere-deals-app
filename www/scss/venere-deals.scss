@@ -199,7 +199,7 @@ $theme: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d,
 
 
 /*DEAL CARDS LANDSCAPE*/
-$squaredCard : 280px;
+$squaredCard : 135px;
 @media screen 
 and (min-width : 550px) 
 /*and (orientation : landscape) */ {
@@ -207,6 +207,7 @@ and (min-width : 550px)
    .topcoat-list__item {
       height: $squaredCard;
       width: $squaredCard;
+      margin: 13px 16px;
       float: left;
       clear: none;
    }
@@ -222,21 +223,26 @@ and (min-width : 550px)
        bottom: 0;
        left: 0;
        font-size: 22px;
-       padding: 6px 0 70px 12px;
+       line-height: 22px;
+       padding: 2px 6px 28px 4px !important;
        position: absolute;
        right: 0;
        width: auto;
        z-index: 1;
-   }   
+   }
+   
+   $arrowWidth:5px;
    .theme-subtitle {
-      height: 16px;
-      margin: 0 0 0 -9px;
+      bottom: ( ($arrowWidth / 2) + 4px);
+      height: 10px;
+      margin: 0 0 0 (-$arrowWidth);
       opacity: 1;
+      padding: 4px 0 8px 11px;
       box-shadow: 1px 3px 3px 3px rgba(0, 0, 0, 0.26);
    }
    .theme-subtitle:before {
        background-color: #000000;
-       bottom: -5px;
+       bottom: -$arrowWidth;
        content: "";
        height: 0;
        left: -19px;
@@ -246,7 +252,7 @@ and (min-width : 550px)
    .theme-subtitle:before {
       background-color: transparent;
       border-style: solid;
-      border-width: 0 9px 5px 0;
+      border-width: 0 $arrowWidth ($arrowWidth / 2) 0;
       border-color: transparent #000000 transparent transparent;
       border-style: inset;
       width: 0px;
@@ -256,6 +262,7 @@ and (min-width : 550px)
    
    .theme-subtitle:after {
       text-shadow: 4px 2px 3px rgba(0, 0, 0, 0.26);
+      top: 1px;
    }
    
    
@@ -266,11 +273,11 @@ and (min-width : 550px)
       text-transform: uppercase;
    }
    
-   $smallerLabel : 28px;
+   $smallerLabel : 22px;
    .theme-subtitle:after {
       height: $smallerLabel;
       font-size: $smallerLabel;
-      right: -(($iconWidth / 2) - 5px);
+      right: -(($iconWidth / 2) + 5px);
    }
    .theme-subtitle .description {
       display: none;
