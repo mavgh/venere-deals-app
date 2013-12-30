@@ -17,8 +17,8 @@ define(function (require) {
 
         routes: {
             "": "home",
-            "theme/:id": "themeDetails",
-            "city/:id/hotels": "hotels"
+            "theme/:id/:color": "themeDetails",
+            "city/:id/:color/hotels": "hotels"
         },
 
         home: function () {
@@ -26,9 +26,9 @@ define(function (require) {
             slider.slidePage(homeView.$el);
         },
 
-        themeDetails: function (id) {
+        themeDetails: function (id , color) {
             require(["app/models/theme", "app/views/Cities"], function (models, CitiesView) {
-                var theme = new models.Theme({id: id});
+                var theme = new models.Theme({id: id, color: color});
                 
                 theme.fetch({
                     success: function (data) {
@@ -39,9 +39,9 @@ define(function (require) {
             });
         },
         
-        hotels: function (id) {
+        hotels: function (id , color) {
             require(["app/models/city", "app/views/Hotels"], function (models, HotelsView) {
-                var city = new models.City({id: id});
+                var city = new models.City({id: id, color: color});
                 city.fetch({
                     success: function (data) {
                         slider.slidePage(new HotelsView({model: data, startDate: startDate}).$el);

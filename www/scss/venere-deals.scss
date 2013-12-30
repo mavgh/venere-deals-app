@@ -127,7 +127,7 @@ $headerDelta  : 4px;
    height: 140px;
    position: relative;
 }
-
+.theme-title,
 .card-title {
    color: #666;
    font-size: 20px;
@@ -180,7 +180,8 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
 @each $color in $card {
    .card-#{nth($color, 1)} {
 
-      .card-title {
+      .card-title,
+      .theme-title {
          color: darken( nth($color, 2), 20% );
       }
       .card-subtitle {
@@ -189,6 +190,7 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
       .card-subtitle:after {
          color: nth($color, 2);
       }
+      .theme-title,
       .card-pic {
          border-color: nth($color, 2);
       }
@@ -291,4 +293,36 @@ and (min-width : 550px)
 
 
 
-/*  */
+/* CITIES PAGE */
+.cities .topcoat-list__item:before {
+   content: none;
+}
+.theme-title {
+   margin: 10px;
+   border-bottom: 2px solid;
+}
+
+.cities .card-pic {
+   border: none;
+}
+.cities .city-name {
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 36px;
+}
+.cities .city-price {
+    color: rgba(255, 255, 255, 0.75);
+    float: right;
+    font-size: 11px;
+    line-height: 14px;
+    padding: 0 20px 0 40px;
+    text-align: right;
+}
+.cities .city-price b {
+    clear: both;
+    color: #FFFFFF;
+    display: block;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 100;
+}

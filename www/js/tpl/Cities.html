@@ -9,22 +9,19 @@
     </div>
 </div>
 
-<div class="details">
-    <img src='{{ img }}'/>
-    <h1>{{ title }}</h1>
-    <h2> {{ subtitle }}</h2>
-</div>
-<div class="topcoat-list__container scroller" style="top:138px;">
+<div class="topcoat-list__container scroller cities card-purple" style="top:138px;">
     <ul class="topcoat-list list">
+    <p class="theme-title">Lorem Ipsum</p>
     {{#each cities}}
         <li class="topcoat-list__item">
-            <a href="#city/{{ id }}/hotels">
-                <img src='{{ img }}'/>
-                <p>{{ name }}</p>
-                <p>{{ description }}&nbsp;</p>
-                <span class="chevron"></span><span class="count">{{ hotelIDs }}</span>
+            <a href="#city/{{ id }}/hotels" class="card-{{ color }}">
+                <span class="card-subtitle vicons-labelhollow">
+                   <span class="city-name">{{ name }}</span>
+                   <span class="city-price">{{ price }}<b>{{ amount }}</b></span><span class="landscape">Book now</span>
+                </span>
+                <div class="card-pic" style='background-image:url({{ img }})'></div>
             </a>
-        </li>
+        </li>    
     {{/each}}
     </ul>
 </div>
