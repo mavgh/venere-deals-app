@@ -15,6 +15,11 @@
     {{#each cities}}
         <li class="topcoat-list__item">
             <a href="#city/{{ id }}/hotels" class="card-{{ color }}">
+               
+                <p class="card-title">{{ name }}
+                <span class="landscape-price">{{ price }}<b>{{ amount }}</b></span>
+                </p>
+               
                 <span class="card-subtitle vicons-labelhollow">
                    <span class="city-name">{{ name }}</span>
                    <span class="city-price">{{ price }}<b>{{ amount }}</b></span><span class="landscape">Book now</span>

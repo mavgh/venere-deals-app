@@ -200,6 +200,50 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
 
 
 
+/* CITIES PAGE */
+.cities .topcoat-list__item:before {
+   content: none;
+}
+.cities .theme-title {
+   margin: 10px;
+   border-bottom: 2px solid;
+}
+
+.cities .card-title {
+   display: none;
+}
+.cities .card-pic {
+   border: none;
+}
+.cities .city-name {
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 36px;
+}
+.cities .card-subtitle {
+   margin: 0 40px 0 0;
+}
+.cities .city-price {
+    color: rgba(255, 255, 255, 0.75);
+    float: right;
+    font-size: 11px;
+    line-height: 14px;
+    padding: 0 20px 0 40px;
+    text-align: right;
+}
+.cities .city-price b {
+    clear: both;
+    color: #FFFFFF;
+    display: block;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 100;
+}
+
+
+
+
+
 /*DEAL CARDS LANDSCAPE*/
 $squaredCard : 135px;
 @media screen 
@@ -281,48 +325,28 @@ and (min-width : 550px)
       font-size: $smallerLabel;
       right: -(($iconWidth / 2) + 5px);
    }
-   .card-subtitle .description {
+   .card-subtitle .description,
+   .cities .card-subtitle .city-name,
+   .cities .card-subtitle .city-price {
       display: none;
    }
    .card-subtitle .landscape {
       display: block;
    }
-}
+   .cities .card-title {
+      display: block;
+   }
+   .cities .landscape-price {
+      clear: both;
+      display: block;
+      font-size: 13px;
+      font-style: italic;
+   }
+   .cities .landscape-price b {
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      padding: 0 0 0 6px;
+   }
 
-
-
-
-
-/* CITIES PAGE */
-.cities .topcoat-list__item:before {
-   content: none;
-}
-.theme-title {
-   margin: 10px;
-   border-bottom: 2px solid;
-}
-
-.cities .card-pic {
-   border: none;
-}
-.cities .city-name {
-    font-size: 20px;
-    font-weight: 100;
-    line-height: 36px;
-}
-.cities .city-price {
-    color: rgba(255, 255, 255, 0.75);
-    float: right;
-    font-size: 11px;
-    line-height: 14px;
-    padding: 0 20px 0 40px;
-    text-align: right;
-}
-.cities .city-price b {
-    clear: both;
-    color: #FFFFFF;
-    display: block;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 100;
 }
