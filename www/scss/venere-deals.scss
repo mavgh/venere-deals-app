@@ -120,6 +120,7 @@ $headerDelta  : 4px;
 }
 
 .card-pic {
+   background-color: #222;
    border-top: 2px solid #666;
    background-size: cover;
    display: block;
@@ -194,7 +195,16 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
       .card-pic {
          border-color: nth($color, 2);
       }
-
+      
+      .hotel-dealInfo {
+         background-color: nth($color, 2);
+      }
+      .hotel-dealInfo:after {
+         color: nth($color, 2);
+      }
+      .hotel-dealInfo .tableFix {
+         background-color: nth($color, 2);
+      }
    }
 }
 
@@ -244,6 +254,103 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
 
 
 
+/*HOTEL STRIPS*/
+$hotelCardHeight : 110px;
+$hotelCardWidth  : 190px;
+.clearFix:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+}
+.hotel-card {
+    height: $hotelCardHeight;
+    margin: 15px 11px 21px;
+    position: relative;
+}
+
+.hotel-pic {
+    background-position: center center;
+    background-size: cover;
+    float: left;
+    height: 100%;
+    position: relative;
+    width: $hotelCardWidth;
+}
+.hotel-price {
+    background-color: rgba(255, 255, 255, 0.85);
+    bottom: 11px;
+    position: absolute;
+    right: 0;
+}
+
+.hotel-info {
+    height: 100%;
+}
+.hotel-name {
+    bottom: 40px;
+    padding: 10px;
+    position: absolute;
+}
+.hotel-dealInfo {
+    background-color: #222;
+    bottom: 11px;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 100;
+    line-height: 14px;
+    margin-right: 20px;
+    padding: 0 10px 0 6px;
+    position: absolute;
+    height: 30px;
+}
+.hotel-dealInfo:before {
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 15px;
+    box-shadow: 19px 15px 3px rgba(0, 0, 0, 0.6);
+    content: "";
+    display: block;
+    height: 10px;
+    position: absolute;
+    right: 15px;
+    transform: rotate(2deg);
+    width: 80% !important;
+    z-index: 0;
+}
+.hotel-dealInfo:after {
+    color: #222222;
+    font-size: 30px;
+    height: 30px;
+    position: absolute;
+    right: -24px;
+    top: 0;
+}
+.hotel-dealInfo .tableFix {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.hotel-dealInfo .tb {
+    display: table;
+    height: 100%;
+}
+.hotel-dealInfo .tc {
+    display: table-cell;
+    position: relative;
+    vertical-align: middle;
+    z-index: 1;
+}
+.hotel-name,
+.hotel-dealInfo {
+    margin-left: $hotelCardWidth;
+}
+
+
+
+
 /*DEAL CARDS LANDSCAPE*/
 $squaredCard : 135px;
 @media screen 
@@ -288,7 +395,7 @@ and (min-width : 550px)
    }
    .card-subtitle:before {
        background-color: #000000;
-       bottom: -$arrowWidth;
+       bottom: -($arrowWidth / 2);
        content: "";
        height: 0;
        left: -19px;

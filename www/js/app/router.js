@@ -18,7 +18,7 @@ define(function (require) {
         routes: {
             "": "home",
             "theme/:id/:color": "themeDetails",
-            "city/:id/:color/hotels": "hotels"
+            "city/:id/hotels": "hotels"
         },
 
         home: function () {
@@ -39,9 +39,9 @@ define(function (require) {
             });
         },
         
-        hotels: function (id , color) {
+        hotels: function (id) {
             require(["app/models/city", "app/views/Hotels"], function (models, HotelsView) {
-                var city = new models.City({id: id, color: color});
+                var city = new models.City({id: id});
                 city.fetch({
                     success: function (data) {
                         slider.slidePage(new HotelsView({model: data, startDate: startDate}).$el);
