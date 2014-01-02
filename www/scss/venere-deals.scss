@@ -485,13 +485,14 @@ and (min-width : 550px)
    }
    
    $arrowWidth:5px;
-   .card-subtitle {
+   .card-subtitle,
+   .cities .card-subtitle {
       bottom: ( ($arrowWidth / 2) + 4px);
       height: 10px;
       margin: 0 0 0 (-$arrowWidth);
       opacity: 1;
       padding: 4px 0 8px 11px;
-      box-shadow: 1px 3px 3px 3px rgba(0, 0, 0, 0.26);
+      box-shadow: 9px 3px 3px 0px rgba(0, 0, 0, 0.26);
    }
    .card-subtitle:before {
        background-color: #000000;
