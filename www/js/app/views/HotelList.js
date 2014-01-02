@@ -27,7 +27,7 @@ define(function (require) {
            }
            
            var hotelTpl = [
-              '<div class="hotel-card clearFix">',
+              '<a class="hotel-card clearFix" href="#">',
                  '<div class="hotel-pic" style="background-image:url('+hotelData.image+');">',
                     '<div class="hotel-price">',
                        '<span class="hotel-price-original">'+hotelData.original+'</span>',
@@ -38,7 +38,7 @@ define(function (require) {
                     '<p class="hotel-name"><span class="name">'+hotelData.name+'</span><span class="vicons-star stars_'+hotelData.stars+'">&nbsp;</span></p>',
                     '<div class="hotel-dealInfo vicons-labelhollow"><span class="tableFix"><span class="tb"><span class="tc">'+hotelData.dealInfo+'</span></span></span></div>',
                  '</div>',                 
-              '</div>'
+              '</a>'
            ].join('\n')
            
            for ( var i=0; i<10; i++) {

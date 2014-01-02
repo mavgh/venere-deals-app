@@ -129,6 +129,9 @@ $headerDelta  : 4px;
    margin: 5px 10px 13px;
    
 }
+.list li:active {
+   background: transparent;
+}
 
 /*CARDS PORTATRAIT SHADOW*/
 .topcoat-list__item:before {
@@ -293,6 +296,7 @@ $hotelCardWidth  : 175px;
     height: 0;
 }
 .hotel-card {
+    display: block;
     height: $hotelCardHeight;
     margin: 8px 11px;
     position: relative;
