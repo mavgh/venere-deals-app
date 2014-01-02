@@ -14,11 +14,11 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'venere-deals-icons';
-    src: url('../font/venere-deals-icons.svg?33918533#venere-deals-icons') format('svg');
+    src: url('../font/venere-deals-icons.svg?90970664#venere-deals-icons') format('svg');
   }
 }
 */
- 
+ .hotel-name [class*="L"]:after,
  [class^="vicons-"]:before, [class*=" vicons-"]:before,
  [class^="vicons-"]:after, [class*=" vicons-"]:after {
   font-family: "venere-deals-icons";
@@ -52,4 +52,5 @@
 }
  
 .vicons-labelhollow:after { content: '\e801'; } /* '' */
+/*.vicons-star:before { content: '\e802'; }  '' */
 .vicons-info-circled-alt:before { content: '\e800'; } /* '' */

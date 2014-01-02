@@ -255,8 +255,8 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
 
 
 /*HOTEL STRIPS*/
-$hotelCardHeight : 110px;
-$hotelCardWidth  : 190px;
+$hotelCardHeight : 95px;
+$hotelCardWidth  : 175px;
 .clearFix:after {
     clear: both;
     content: "";
@@ -265,10 +265,11 @@ $hotelCardWidth  : 190px;
 }
 .hotel-card {
     height: $hotelCardHeight;
-    margin: 15px 11px 21px;
+    margin: 8px 11px;
     position: relative;
 }
 
+$priceHeight:35px;
 .hotel-pic {
     background-position: center center;
     background-size: cover;
@@ -280,8 +281,12 @@ $hotelCardWidth  : 190px;
 .hotel-price {
     background-color: rgba(255, 255, 255, 0.85);
     bottom: 11px;
+    height: $priceHeight;
     position: absolute;
     right: 0;
+}
+.hotel-price-original {
+   
 }
 
 .hotel-info {
@@ -289,6 +294,8 @@ $hotelCardWidth  : 190px;
 }
 .hotel-name {
     bottom: 40px;
+    font-size: 16px;
+    margin: 0;
     padding: 10px;
     position: absolute;
 }
@@ -299,11 +306,11 @@ $hotelCardWidth  : 190px;
     font-size: 11px;
     font-style: italic;
     font-weight: 100;
-    line-height: 14px;
+    line-height: 12px;
     margin-right: 20px;
     padding: 0 10px 0 6px;
     position: absolute;
-    height: 30px;
+    height: $priceHeight;
 }
 .hotel-dealInfo:before {
     background-color: rgba(0, 0, 0, 0);
@@ -320,10 +327,10 @@ $hotelCardWidth  : 190px;
 }
 .hotel-dealInfo:after {
     color: #222222;
-    font-size: 30px;
-    height: 30px;
+    font-size: $priceHeight;
+    height: $priceHeight;
     position: absolute;
-    right: -24px;
+    right: -($priceHeight - 6px);
     top: 0;
 }
 .hotel-dealInfo .tableFix {
@@ -347,8 +354,60 @@ $hotelCardWidth  : 190px;
 .hotel-dealInfo {
     margin-left: $hotelCardWidth;
 }
+.hotel-name .name {
+   margin: 0 6px 0 0;
+}
 
 
+/*STARS RATING*/
+[class*="stars_"] {
+float:none !important;
+display: inline-block;
+font-family:arial;
+font-size:10px;
+color:#666666;
+margin:0 0 0;
+position: relative;
+top: 3px;
+overflow:hidden;
+text-indent: -9999px;
+height: 14px !important;
+}
+
+$starWidth:13px;
+@for $i from 1 through 7 {
+  .stars_#{$i} { width: $starWidth * $i; }
+}
+@for $i from 4 through 7 {
+  .stars_#{$i}L:before { width: $starWidth * $i; }
+  .stars_#{$i}L { width: ($starWidth * $i)+9px; }
+}
+
+
+/* vicons-star */
+.vicons-star:before,
+[class*="stars_"]:before {
+content: "\e802\e802\e802\e802\e802\e802\e802";
+font-size: 22px;
+height: 20px;
+left: 0;
+letter-spacing: -9px;
+line-height: 11px !important;
+position: absolute;
+text-indent: -9px !important;
+width: auto;
+}
+/* vicons-luxury */
+.hotel-name [class*="L"]:after {
+background: none repeat scroll 0 0 #E9E9E9;
+content: "\e803";
+font-size: 30px;
+margin: -9px 0 0;
+position: absolute;
+right: -27px;
+text-indent: -20px;
+width: 8px;
+}
 
 
 /*DEAL CARDS LANDSCAPE*/

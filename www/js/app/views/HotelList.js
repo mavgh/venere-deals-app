@@ -35,7 +35,7 @@ define(function (require) {
                     '</div>',
                  '</div>',
                  '<div class="hotel-info">',
-                    '<p class="hotel-name">'+hotelData.name+'<span class="stars_'+hotelData.stars+'">&nbsp;</span></p>',
+                    '<p class="hotel-name"><span class="name">'+hotelData.name+'</span><span class="vicons-star stars_'+hotelData.stars+'">&nbsp;</span></p>',
                     '<div class="hotel-dealInfo vicons-labelhollow"><span class="tableFix"><span class="tb"><span class="tc">'+hotelData.dealInfo+'</span></span></span></div>',
                  '</div>',                 
               '</div>'
