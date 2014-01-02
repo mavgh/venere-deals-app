@@ -18,7 +18,7 @@
   }
 }
 */
- .hotel-name [class*="L"]:after,
+ .hotel-name [class*="L"]:after, .back-button:before,
  [class^="vicons-"]:before, [class*=" vicons-"]:before,
  [class^="vicons-"]:after, [class*=" vicons-"]:after {
   font-family: "venere-deals-icons";

@@ -81,16 +81,42 @@ $headerDelta  : 4px;
 .topcoat-icon-button--quiet.is-active,
 .topcoat-icon-button--large--quiet:active,
 .topcoat-icon-button--large--quiet.is-active {
+      background-color: transparent;
     border: none;
     box-shadow: none;
     color: #C6C8C8;
     text-shadow: none;
     line-height: ($headerHeight - $headerDelta);
-    margin: ($headerDelta / 2) 0 0;
 }
 
+.topcoat-icon--back {
+   background-image: none !important;
+}
+.back-button:before {
+   content: '\e800';
+    border: 2px solid #222222;
+    border-radius: 100%;
+    color: #222222;
+    display: block;
+    font-size: 30px;
+    height: 25px;
+    left: -5px;
+    line-height: 26px !important;
+    margin: 3px 0 0;
+    position: absolute;
+    text-indent: -3px;
+    width: 25px !important;
+}
 
-
+.topcoat-icon-button--quiet.back-button:active:before,
+.topcoat-icon-button--quiet.is-active.back-button:before,
+.topcoat-icon-button--large--quiet.back-button:active:before,
+.topcoat-icon-button--large--quiet.is-active.back-button:before {
+   background-color: #222;
+   border-color: #FFF;
+   box-shadow: 0 0 1px #000000;
+   color: #FFF;
+}
 
 /*DEAL CARDS*/
 .topcoat-list__item:first-child {
