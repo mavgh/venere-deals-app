@@ -188,6 +188,9 @@ body,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003205}}
 .card-purple .hotel-dealInfo .tableFix {
   background-color: #7960a9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003208}}
+.card-purple .hotel-price-discount {
+  color: #7960a9; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003185}}
 .card-red .card-title,
@@ -212,6 +215,9 @@ body,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003205}}
 .card-red .hotel-dealInfo .tableFix {
   background-color: #d91f26; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003208}}
+.card-red .hotel-price-discount {
+  color: #d91f26; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003185}}
 .card-gold .card-title,
@@ -236,6 +242,9 @@ body,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003205}}
 .card-gold .hotel-dealInfo .tableFix {
   background-color: #ad8a2f; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003208}}
+.card-gold .hotel-price-discount {
+  color: #ad8a2f; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003185}}
 .card-azure .card-title,
@@ -260,6 +269,9 @@ body,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003205}}
 .card-azure .hotel-dealInfo .tableFix {
   background-color: #5c80c0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003208}}
+.card-azure .hotel-price-discount {
+  color: #5c80c0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003185}}
 .card-green .card-title,
@@ -284,6 +296,9 @@ body,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003205}}
 .card-green .hotel-dealInfo .tableFix {
   background-color: #61bc5d; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003208}}
+.card-green .hotel-price-discount {
+  color: #61bc5d; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003185}}
 .card-orange .card-title,
@@ -308,36 +323,39 @@ body,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003205}}
 .card-orange .hotel-dealInfo .tableFix {
   background-color: #e87c24; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003208}}
+.card-orange .hotel-price-discount {
+  color: #e87c24; }
 
 /* CITIES PAGE */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003217}}
 .cities .topcoat-list__item:before {
   content: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003217}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003220}}
 .cities .theme-title {
   margin: 10px;
   border-bottom: 2px solid; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003222}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003225}}
 .cities .card-title {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003225}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003228}}
 .cities .card-pic {
   border: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003228}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003231}}
 .cities .city-name {
   font-size: 20px;
   font-weight: 100;
   line-height: 36px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003236}}
 .cities .card-subtitle {
   margin: 0 40px 0 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003236}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003239}}
 .cities .city-price {
   color: rgba(255, 255, 255, 0.75);
   float: right;
@@ -346,7 +364,7 @@ body,
   padding: 0 20px 0 40px;
   text-align: right; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003247}}
 .cities .city-price b {
   clear: both;
   color: #FFFFFF;
@@ -356,20 +374,20 @@ body,
   font-weight: 100; }
 
 /*HOTEL STRIPS*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003263}}
 .clearFix:after {
   clear: both;
   content: "";
   display: block;
   height: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003266}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003269}}
 .hotel-card {
   height: 95px;
   margin: 8px 11px;
   position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003273}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003276}}
 .hotel-pic {
   background-position: center center;
   background-size: cover;
@@ -378,19 +396,31 @@ body,
   position: relative;
   width: 175px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003284}}
 .hotel-price {
   background-color: rgba(255, 255, 255, 0.85);
   bottom: 11px;
   height: 35px;
+  padding: 0 6px;
   position: absolute;
   right: 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003292}}
+.hotel-price-original {
+  color: #999999;
+  font-size: 18px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003296}}
+.hotel-price-discount {
+  font-size: 30px;
+  line-height: 35px;
+  margin-left: 6px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003302}}
 .hotel-info {
   height: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003295}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003305}}
 .hotel-name {
   bottom: 40px;
   font-size: 16px;
@@ -398,7 +428,7 @@ body,
   padding: 10px;
   position: absolute; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003302}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003312}}
 .hotel-dealInfo {
   background-color: #222;
   bottom: 11px;
@@ -412,7 +442,7 @@ body,
   position: absolute;
   height: 35px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003325}}
 .hotel-dealInfo:before {
   background-color: rgba(0, 0, 0, 0);
   bottom: 15px;
@@ -426,7 +456,7 @@ body,
   width: 80% !important;
   z-index: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003338}}
 .hotel-dealInfo:after {
   color: #222222;
   font-size: 35px;
@@ -435,7 +465,7 @@ body,
   right: -29px;
   top: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003346}}
 .hotel-dealInfo .tableFix {
   display: block;
   height: 100%;
@@ -443,29 +473,29 @@ body,
   position: relative;
   z-index: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003353}}
 .hotel-dealInfo .tb {
   display: table;
   height: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003357}}
 .hotel-dealInfo .tc {
   display: table-cell;
   position: relative;
   vertical-align: middle;
   z-index: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003364}}
 .hotel-name,
 .hotel-dealInfo {
   margin-left: 175px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003367}}
 .hotel-name .name {
   margin: 0 6px 0 0; }
 
 /*STARS RATING*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003373}}
 [class*="stars_"] {
   float: none !important;
   display: inline-block;
@@ -479,68 +509,68 @@ body,
   text-indent: -9999px;
   height: 14px !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003389}}
 .stars_1 {
   width: 13px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003389}}
 .stars_2 {
   width: 26px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003389}}
 .stars_3 {
   width: 39px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003389}}
 .stars_4 {
   width: 52px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003389}}
 .stars_5 {
   width: 65px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003389}}
 .stars_6 {
   width: 78px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003389}}
 .stars_7 {
   width: 91px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003392}}
 .stars_4L:before {
   width: 52px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003393}}
 .stars_4L {
   width: 61px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003392}}
 .stars_5L:before {
   width: 65px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003393}}
 .stars_5L {
   width: 74px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003392}}
 .stars_6L:before {
   width: 78px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003393}}
 .stars_6L {
   width: 87px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003392}}
 .stars_7L:before {
   width: 91px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003393}}
 .stars_7L {
   width: 100px; }
 
 /* vicons-star */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003399}}
 .vicons-star:before,
 [class*="stars_"]:before {
   content: "\e802\e802\e802\e802\e802\e802\e802";
@@ -554,7 +584,7 @@ body,
   width: auto; }
 
 /* vicons-luxury */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003401}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003411}}
 .hotel-name [class*="L"]:after {
   background: none repeat scroll 0 0 #E9E9E9;
   content: "\e803";
@@ -567,7 +597,7 @@ body,
 
 /*DEAL CARDS LANDSCAPE*/
 @media screen and (min-width: 550px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003419}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003429}}
   .list li,
   .topcoat-list__item {
     height: 135px;
@@ -576,16 +606,16 @@ body,
     float: left;
     clear: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003426}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003436}}
   .topcoat-list__item:before {
     content: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003429}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003439}}
   .card-pic {
     border-top: none;
     height: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003433}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003443}}
   .card-title {
     background-color: rgba(255, 255, 255, 0.7);
     bottom: 0;
@@ -598,7 +628,7 @@ body,
     width: auto;
     z-index: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003447}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003457}}
   .card-subtitle {
     bottom: 6.5px;
     height: 10px;
@@ -607,7 +637,7 @@ body,
     padding: 4px 0 8px 11px;
     box-shadow: 1px 3px 3px 3px rgba(0, 0, 0, 0.26); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003455}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003465}}
   .card-subtitle:before {
     background-color: #000000;
     bottom: -2.5px;
@@ -617,7 +647,7 @@ body,
     position: absolute;
     width: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003464}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003474}}
   .card-subtitle:before {
     background-color: transparent;
     border-style: solid;
@@ -628,46 +658,46 @@ body,
     height: 0px;
     -webkit-transform: rotate(360deg); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003475}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003485}}
   .card-subtitle:after {
     text-shadow: 4px 2px 3px rgba(0, 0, 0, 0.26);
     top: 1px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003481}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003491}}
   .card-subtitle .landscape {
     font-size: 11px;
     font-weight: 400;
     padding: 0 21px 0 0;
     text-transform: uppercase; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003489}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003499}}
   .card-subtitle:after {
     height: 22px;
     font-size: 22px;
     right: -25px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003496}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003506}}
   .card-subtitle .description,
   .cities .card-subtitle .city-name,
   .cities .card-subtitle .city-price {
     display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003499}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003509}}
   .card-subtitle .landscape {
     display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003502}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003512}}
   .cities .card-title {
     display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003505}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003515}}
   .cities .landscape-price {
     clear: both;
     display: block;
     font-size: 13px;
     font-style: italic; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003511}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/srescio\/GitHub\/venere-deals-app\/www\/scss\/venere-deals\.scss}line{font-family:\00003521}}
   .cities .landscape-price b {
     font-size: 17px;
     font-style: normal;

@@ -205,6 +205,9 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
       .hotel-dealInfo .tableFix {
          background-color: nth($color, 2);
       }
+      .hotel-price-discount {
+         color: nth($color, 2);
+      }
    }
 }
 
@@ -282,11 +285,18 @@ $priceHeight:35px;
     background-color: rgba(255, 255, 255, 0.85);
     bottom: 11px;
     height: $priceHeight;
+    padding: 0 6px;
     position: absolute;
     right: 0;
 }
 .hotel-price-original {
-   
+    color: #999999;
+    font-size: 18px;
+}
+.hotel-price-discount {
+    font-size: 30px;
+    line-height: 35px;
+    margin-left: 6px;
 }
 
 .hotel-info {
