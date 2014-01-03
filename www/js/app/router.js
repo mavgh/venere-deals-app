@@ -18,7 +18,8 @@ define(function (require) {
         routes: {
             "": "home",
             "theme/:id/:color": "themeDetails",
-            "city/:id/hotels": "hotels"
+            "city/:id/hotels": "hotels",
+            "hotel/:id": "hdp"
         },
 
         home: function () {
@@ -45,6 +46,17 @@ define(function (require) {
                 city.fetch({
                     success: function (data) {
                         slider.slidePage(new HotelsView({model: data, startDate: startDate}).$el);
+                    }
+                });
+            });
+        },
+        
+        hdp: function (id) {
+            require(["app/models/hotel", "app/views/hdp"], function (models, hdpView) {
+                var hotel = new models.Hotel();
+                hotel.fetch({ data: { propertyID: id, startDate: startDate},
+                    success: function (data) {
+                        slider.slidePage(new hdpView({model: data, startDate: startDate}).$el);
                     }
                 });
             });

@@ -1,0 +1,28 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="topcoat-icon-button--quiet back-button" href="#">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title">{{ PropertyDetails.name }}</h1>
+    </div>
+</div>
+
+<div class="details">
+    <img src='{{ PropertyDetails.photoURL }}'/>
+    <h1>{{ PropertyDetails.name }}</h1>
+    <h2>{{ PropertyDetails.descr }}</h2>
+</div>
+
+<div class="topcoat-list__container scroller">
+    <ul class="topcoat-list list">
+    {{#each AvailStays.AvailStay}}
+        <li class="topcoat-list__item">
+            <p>{{ AvailRooms.AvailRoom.[0].roomName }}</p>
+            <span class="chevron"></span><span class="count">{{ PriceInfo.displayPrice }}€</span>
+            <p>{{ GlobalCancellationPolicy.Clause}}</p>
+        </li>
+    {{/each}}
+    </ul>
+</div>
