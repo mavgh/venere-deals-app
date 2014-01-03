@@ -81,7 +81,7 @@ $headerDelta  : 4px;
 .topcoat-icon-button--quiet.is-active,
 .topcoat-icon-button--large--quiet:active,
 .topcoat-icon-button--large--quiet.is-active {
-      background-color: transparent;
+    background-color: transparent;
     border: none;
     box-shadow: none;
     color: #C6C8C8;
@@ -94,7 +94,7 @@ $headerDelta  : 4px;
 }
 .back-button:before {
    content: '\e800';
-    border: 2px solid #222222;
+    border: 1px solid #222222;
     border-radius: 100%;
     color: #222222;
     display: block;
