@@ -11,11 +11,13 @@ define(function (require) {
 
     return Backbone.View.extend({
 
-        initialize: function () {
+        initialize: function (options) {
            /**
             * Replace dummy content with correct call to template data
             **/
            var html = [];
+           
+           this.color=options.color;
            
            var hotelData = {
               image   : 'http://www.mensfitness.com/sites/mensfitness.com/files/imagecache/node_page_image/blog_images/dirty-hotel_main.jpg',
@@ -50,7 +52,7 @@ define(function (require) {
         },
 
         render: function () {
-            this.$el.html(template({hotels: this.collection.toJSON()}));
+            this.$el.html(template({hotels: this.collection.toJSON(),color:this.color}));
             return this;
         }
 

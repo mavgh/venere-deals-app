@@ -18,7 +18,7 @@ define(function (require) {
         routes: {
             "": "home",
             "theme/:id/:color": "themeDetails",
-            "city/:id/hotels": "hotels",
+            "city/:id/hotels/:color": "hotels",
             "hotel/:id": "hdp"
         },
 
@@ -40,12 +40,12 @@ define(function (require) {
             });
         },
         
-        hotels: function (id) {
+        hotels: function (id,color) {
             require(["app/models/city", "app/views/Hotels"], function (models, HotelsView) {
                 var city = new models.City({id: id});
                 city.fetch({
                     success: function (data) {
-                        slider.slidePage(new HotelsView({model: data, startDate: startDate}).$el);
+                        slider.slidePage(new HotelsView({model: data, startDate: startDate,color:color}).$el);
                     }
                 });
             });

@@ -15,6 +15,9 @@
         <param name="ios-package" value="CDVLogger" />
     </feature>
     <feature name="Logger">
-    <param name="ios-package" value="CDVLogger" />
-</feature>
+            <param name="ios-package" value="CDVLogger" />
+    </feature>
+    <feature name="StatusBar">
+            <param name="ios-package" value="CDVStatusBar" onload="true" />
+     </feature>
 </widget>

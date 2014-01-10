@@ -15,13 +15,15 @@ define(function (require) {
 
         initialize: function (options) {
             this.hotels = new model.HotelCollection();
+            this.color=options.color;
             this.render();
+            
             this.hotels.fetch({ reset:true, data: { geoID: this.model.attributes.geoID, startDate: options.startDate} });
         },
 
         render: function () {
             this.$el.html(template(this.model.attributes));
-            this.listView = new HotelListView({collection: this.hotels, el: $(".scroller", this.el)});
+            this.listView = new HotelListView({collection: this.hotels,color:this.color, el: $(".scroller", this.el)});
             return this;
         }
 

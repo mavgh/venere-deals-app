@@ -30,6 +30,17 @@ require.config({
 });
 
 require(['jquery', 'backbone', 'app/router', 'fastclick'], function ($, Backbone, Router) {
+    
+    
+  var iOS7 = window.device
+                && window.device.platform 
+                && window.device.platform.toLowerCase() === "ios"
+                && parseFloat(window.device.version) >= 7.0;
+        if (iOS7) {
+            StatusBar.overlaysWebView(false);
+            //StatusBar.backgroundColorByName("orange");
+            StatusBar.styleBlackOpaque();
+         }
 
     //Setup header Authorization (venere_tester)
     $.ajaxSetup({

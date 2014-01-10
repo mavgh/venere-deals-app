@@ -14,7 +14,7 @@
     <p class="theme-title">{{ title }}</p>
     {{#each cities}}
         <li class="topcoat-list__item">
-            <a href="#city/{{ id }}/hotels" class="card-{{ color }}">
+            <a href="#city/{{ id }}/hotels/{{ ../color }}" class="card-{{ ../color }}">
                
                 <p class="card-title">{{ name }}
                 <span class="landscape-price">{{ price }}<b>{{ amount }}</b></span>
