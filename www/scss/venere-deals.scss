@@ -132,8 +132,12 @@ $headerDelta  : 4px;
    border: none;
    padding: 0 !important;
    margin: 5px 10px 13px;
-   
 }
+.list li:last-child,
+.topcoat-list__item:last-child {
+   margin: 5px 10px 40px;
+}
+
 .list li:active {
    background: transparent;
    box-shadow: none;
@@ -468,9 +472,10 @@ width: 8px;
 
 /*DEAL CARDS LANDSCAPE*/
 $squaredCard : 135px;
+$arrowWidth:5px;
 @media screen 
-and (min-width : 550px) 
-/*and (orientation : landscape) */ {
+and (orientation : landscape) 
+{
    .list li,
    .topcoat-list__item {
       height: $squaredCard;
@@ -499,7 +504,14 @@ and (min-width : 550px)
        z-index: 1;
    }
    
-   $arrowWidth:5px;
+   
+   /*Color gradient*/
+   .card-subtitle,
+   .cities .card-subtitle,
+   .card-subtitle:after {
+      
+   }
+   
    .card-subtitle,
    .cities .card-subtitle {
       bottom: ( ($arrowWidth / 2) + 4px);
@@ -508,6 +520,7 @@ and (min-width : 550px)
       opacity: 1;
       padding: 4px 0 8px 11px;
       box-shadow: 9px 3px 3px 0px rgba(0, 0, 0, 0.26);
+      
    }
    .card-subtitle:before {
        background-color: #000000;
@@ -518,6 +531,7 @@ and (min-width : 550px)
        position: absolute;
        width: 0;
    }
+      
    .card-subtitle:before {
       background-color: transparent;
       border-style: solid;
@@ -573,3 +587,11 @@ and (min-width : 550px)
    }
 
 }
+
+   @media screen and (-webkit-min-device-pixel-ratio:0)
+   and (orientation : landscape)  
+   {
+      .card-subtitle:after {
+         top:0;
+      }
+   }
