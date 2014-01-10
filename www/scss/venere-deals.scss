@@ -138,6 +138,9 @@ $headerDelta  : 4px;
    background: transparent;
    box-shadow: none;
 }
+.list li:active:before {
+   content: none;
+}
 
 /*CARDS PORTATRAIT SHADOW*/
 .topcoat-list__item:before {
