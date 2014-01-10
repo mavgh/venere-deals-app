@@ -167,7 +167,7 @@ $headerDelta  : 4px;
 .card-title {
    color: #666;
    font-size: 20px;
-   font-weight: 100 !important;
+   font-weight: 400 !important;
    text-shadow: 1px 0 0 #FFFFFF;
 }
 .card-subtitle {
@@ -184,10 +184,13 @@ $headerDelta  : 4px;
 }
 .card-subtitle .description {
     display: block;
-    font-size: 12px;
+    font-family: Open Sans;
+    font-size: 16px;
     height: 100%;
-    line-height: 13px;
+    line-height: 19px;
     overflow: hidden;
+    padding: 0 15px 0 0;
+    vertical-align: top;
 }
 .card-subtitle .landscape {
    display: none;
@@ -195,7 +198,7 @@ $headerDelta  : 4px;
 
 /*card subtitle right icon*/
 $iconWidth : 40px;
-$IconSize : 50px;
+$IconSize : 49px;
 .card-subtitle:after {
     content: "";
     color: #666;
@@ -269,23 +272,27 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
     line-height: 36px;
 }
 .cities .card-subtitle {
-   margin: 0 40px 0 0;
+      box-shadow: 12px 7px 5px rgba(0, 0, 0, 0.45);
+    content: "";
+    margin: 0 40px 0 0;
 }
 .cities .city-price {
     color: rgba(255, 255, 255, 0.75);
     float: right;
     font-size: 11px;
-    line-height: 14px;
-    padding: 0 20px 0 40px;
+    margin: -2px 0 0;
+    padding: 0 15px 0 40px;
     text-align: right;
 }
 .cities .city-price b {
     clear: both;
     color: #FFFFFF;
     display: block;
-    font-size: 20px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 100;
+    line-height: 22px;
+    margin: 0 -2px 0 0;
 }
 
 

@@ -11,4 +11,10 @@
     <access origin="*" subdomains="true" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+    </feature>
+    <feature name="Logger">
+    <param name="ios-package" value="CDVLogger" />
+</feature>
 </widget>
