@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&subset=latin,latin-ext);
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -7,6 +8,10 @@ and open the template in the editor.
     Created on : 23-dic-2013, 11.59.01
     Author     : srescio
 */
+
+html, body {
+   font-family: 'Open Sans' !important;
+}
 
 /*COLORS*/
 $navHeading : #222;
