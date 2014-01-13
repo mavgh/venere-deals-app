@@ -29,7 +29,7 @@ require.config({
     }
 });
 
-require(['jquery', 'backbone', 'app/router', 'fastclick'], function ($, Backbone, Router) {
+require(['jquery', 'backbone', 'app/router', 'fastclick','async!http://maps.google.com/maps/api/js?sensor=false'], function ($, Backbone, Router) {
 
     //Setup header Authorization (venere_tester)
     $.ajaxSetup({

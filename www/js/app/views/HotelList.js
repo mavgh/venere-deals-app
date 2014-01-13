@@ -5,13 +5,16 @@ define(function (require) {
     var $                   = require('jquery'),
         Handlebars          = require('handlebars'),
         Backbone            = require('backbone'),
-        tpl                 = require('text!tpl/HotelList.html'),
+        tpl_pt              = require('text!tpl/HotelList.html'),
+        tpl_ls              = require('text!tpl/HotelList_ls.html'),
 
-        template = Handlebars.compile(tpl);
+        template_pt = Handlebars.compile(tpl_pt),
+        template_ls = Handlebars.compile(tpl_ls),
+        template, map, infowindow, view, propertiesOnMap, isLS = false;
 
     return Backbone.View.extend({
-
-        initialize: function () {
+        initialize: function (options) {
+           map = options.map;
            /**
             * Replace dummy content with correct call to template data
             **/
@@ -46,14 +49,139 @@ define(function (require) {
            }
            
             $( html.join('\n') ).prependTo(this.$el);
-            this.collection.on("reset", this.render, this);
+            var supportsOrientationChange = "onorientationchange" in window,
+                orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+            window.addEventListener(orientationEvent, supportsOrientationChange ? this.checkOrientationAndRender : this.checkResizeAndRender, false);
+            view = this;
+            this.collection.on("reset", this.checkOrientationAndRender, this);
         },
 
         render: function () {
             this.$el.html(template({hotels: this.collection.toJSON()}));
             return this;
-        }
+        },
+        
+        checkOrientationAndRender: function(event) {
+            if (window.orientation === -90 || window.orientation === 90) {
+                template = template_ls;
+                isLS = true;
+            } else {
+                template = template_pt;
+                isLS = false;
+            }
+            template = template_ls;
+            isLS = true;
+            view.render();
+            setTimeout(this.initializeMap(),1000);
+        },
+        
+        checkResizeAndRender: function(event) {
+            if (window.innerWidth > window.innerHeight) {
+                template = template_ls;
+                isLS = true;
+            } else {
+                template = template_pt;
+                isLS = false;
+            }
+            template = template_ls;
+            isLS = true;
+            view.render();
+            setTimeout(this.initializeMap(),1000);
+        },
+        initializeMap: function() {
+            if (isLS===true) {
+                this.getPropertyCoords();
+                var mapStyles = [{
+                        featureType: "poi.business",
+                        elementType: "all", // all, labels
+                        stylers: [{visibility: "off"}]
+                    }];
+                var myOptions = {
+                    center: propertiesOnMap.bounds.getCenter(),//new google.maps.LatLng(-34.397, 150.644),
+                    zoom: 8,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    scaleControl: true,
+                    styles: mapStyles,
+                    mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+                    },
+                    navigationControlOptions: {
+                        style: google.maps.NavigationControlStyle.ZOOM_PAN
+                    },
+                    scrollwheel: false
+                }
+                map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+//            google.maps.event.addListener(this.map, 'dragstart', function() {
+//                var context = $.getContext();
+//                context.dragStart = this.getCenter();
+//            });
+//            google.maps.event.addListener(this.map, 'dragend', function() {
+//                var context = $.getContext();
+//                if (context.searchOnDrag) {
+//                    var dragEnd = this.getCenter();
+//                    var radius = parseFloat(google.maps.geometry.spherical.computeDistanceBetween(this.getBounds().getNorthEast(), this.getBounds().getSouthWest())) / 2.0 / 2.0;
+//                    if (parseFloat(google.maps.geometry.spherical.computeDistanceBetween(context.dragStart, dragEnd)) > radius) {
+//                        context.model.propertiesMapData = null;
+//                        context.openMap();
+//                    }
+//                }
+//                context.dragStart = null;
+//            });
+//            google.maps.event.addListener(this.map, 'click', function(event) {
+//
+//                var context = $.getContext();
+//                context.designOnMap(this, event, true);
+//            });
+            map.fitBounds(propertiesOnMap.bounds);
+            this.initMarkers();
+            }
+        },
+        getPropertyCoords: function() {
+            var bounds = new google.maps.LatLngBounds();
+            propertiesOnMap = new Object();
+            propertiesOnMap.properties = new Array();
 
+            for (var i = 0; i < this.collection.models.length; i++) {
+                propertiesOnMap.properties[i] = this.collection.models[i].attributes.PropertyDetails;
+                propertiesOnMap.properties[i].position = new google.maps.LatLng(propertiesOnMap.properties[i].latitude, propertiesOnMap.properties[i].longitude)
+                bounds.extend(propertiesOnMap.properties[i].position);
+            }
+
+            propertiesOnMap.bounds = bounds;
+            console.log(propertiesOnMap.bounds.getCenter());
+        },
+        initMarkers: function() {
+            this.markersList = [];
+            for (var index = 0; index < propertiesOnMap.properties.length; index++) {
+                var property = propertiesOnMap.properties[index];
+                if (property.position) {
+                    var marker = new google.maps.Marker({
+                        position: property.position,
+                        map: map
+                    });
+                    marker.htid = property.id;
+                    marker.index = index;
+
+                    marker.setTitle(property.name);
+//            marker.setIcon("/img/search2/mappe/icon_gmap_blue.png");
+                    marker.setIcon("pics/m-green-dot.png");
+
+                    this.markersList[index] = marker;
+                    this.addMarkerEvent(marker,property);
+                }
+            }
+        },
+        addMarkerEvent: function(marker,property) {
+
+            google.maps.event.addListener(marker, 'click', function() {
+                if (infowindow)
+                    infowindow.close();
+                infowindow = new google.maps.InfoWindow();
+//                infowindow.setContent(context.view.drawComicStrip(context.model, context.tracker, marker.index));
+                infowindow.setContent(property.name);
+                infowindow.open(map, marker);
+            });
+        }
     });
 
 });
