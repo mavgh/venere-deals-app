@@ -28,7 +28,7 @@ define(function (require) {
         render: function () {
             this.$el.html(template({themes: this.themeList.toJSON()}));
             return this;
-        },
+        }
     });
 
 });
