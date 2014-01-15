@@ -217,6 +217,10 @@ $IconSize : 49px;
     top: 0;
     width: $iconWidth;
     z-index: -1;
+    text-shadow: 4px 2px 3px rgba(0, 0, 0, 0.26);
+}
+.themes .card-subtitle:after {
+   text-shadow: none;
 }
 
 
@@ -279,7 +283,7 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
     line-height: 36px;
 }
 .cities .card-subtitle {
-      box-shadow: 12px 7px 5px rgba(0, 0, 0, 0.45);
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.26);
     content: "";
     margin: 0 40px 0 0;
 }
@@ -543,9 +547,17 @@ and (orientation : landscape)
       -webkit-transform:rotate(360deg);
    }
    
+   .card-subtitle {
+      background: -webkit-linear-gradient(#eee, #333);
+   }
+   
    .card-subtitle:after {
-      text-shadow: 4px 2px 3px rgba(0, 0, 0, 0.26);
+      text-shadow: 4px 2px 3px rgba(0, 0, 0, 0.0);
       top: 1px;
+      
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;      
    }
    
    
