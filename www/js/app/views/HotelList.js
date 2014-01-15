@@ -10,11 +10,10 @@ define(function(require) {
 
             template_pt = Handlebars.compile(tpl_pt),
             template_ls = Handlebars.compile(tpl_ls),
-            template, map, infowindow, view, propertiesOnMap, isLS;
+            template, map, infowindow, view, propertiesOnMap, color, isLS;
 
     return Backbone.View.extend({
         initialize: function (options) {
-            map = options.map;
             /**
              * Replace dummy content with correct call to template data
              **/
@@ -22,7 +21,8 @@ define(function(require) {
             //Init global variables
             view = this;
             map = null;
-
+            isLS = null;
+            color = options.color;
             $(html).prependTo(this.$el);
             var supportsOrientationChange = "onorientationchange" in window,
                     orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
@@ -31,7 +31,7 @@ define(function(require) {
             this.collection.on("reset", supportsOrientationChange ? this.checkOrientationAndRender : this.checkResizeAndRender, this);
         },
         render: function() {
-            this.$el.html(template({hotels: this.collection.toJSON()}));
+            this.$el.html(template({hotels: this.collection.toJSON(), color: color}));
             return this;
         },
         checkOrientationAndRender: function(event) {
