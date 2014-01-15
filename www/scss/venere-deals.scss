@@ -257,6 +257,26 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
       .hotel-price-discount {
          color: nth($color, 2);
       }
+      
+      
+      @media screen 
+      and (orientation : landscape) 
+      {
+         $startColor:nth($color, 2);
+         $endColor  :darken( nth($color, 2), 20% );
+         
+         .card-subtitle,
+         .card-subtitle:after {   
+            background: $startColor;
+            background: -moz-linear-gradient(top,  $startColor 0%, $endColor 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$startColor), color-stop(100%,$endColor));
+            background: -webkit-linear-gradient(top,  $startColor 0%,$endColor 100%);
+            background: -o-linear-gradient(top,  $startColor 0%,$endColor 100%);
+            background: -ms-linear-gradient(top,  $startColor 0%,$endColor 100%);
+            background: linear-gradient(to bottom,  $startColor 0%,$endColor 100%);
+         }
+      }
+      
    }
 }
 
@@ -278,6 +298,7 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
    border: none;
 }
 .cities .city-name {
+    float: left;
     font-size: 20px;
     font-weight: 100;
     line-height: 36px;
@@ -322,8 +343,11 @@ $hotelCardWidth  : 175px;
 .hotel-card {
     display: block;
     height: $hotelCardHeight;
-    margin: 8px 11px;
+    margin: 14px 11px;
     position: relative;
+}
+.hotel-card:first-child {
+    margin: 21px 11px 14px 11px;
 }
 
 $priceHeight:35px;
@@ -474,6 +498,91 @@ width: 8px;
 }
 
 
+/*LOADER*/
+.loading-content {
+background: rgb(255,136,0);
+background: -moz-linear-gradient(left,  rgba(255,136,0,1) 0%, rgba(255,225,191,1) 86%, rgba(255,225,191,1) 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,136,0,1)), color-stop(86%,rgba(255,225,191,1)), color-stop(100%,rgba(255,225,191,1)));
+background: -webkit-linear-gradient(left,  rgba(255,136,0,1) 0%,rgba(255,225,191,1) 86%,rgba(255,225,191,1) 100%);
+background: -o-linear-gradient(left,  rgba(255,136,0,1) 0%,rgba(255,225,191,1) 86%,rgba(255,225,191,1) 100%);
+background: -ms-linear-gradient(left,  rgba(255,136,0,1) 0%,rgba(255,225,191,1) 86%,rgba(255,225,191,1) 100%);
+background: linear-gradient(to right,  rgba(255,136,0,1) 0%,rgba(255,225,191,1) 86%,rgba(255,225,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8800', endColorstr='#ffe1bf',GradientType=1 );
+/*Android 4.2.2 stockbrowser doesn't support border-radiua shorthand, all four corners must be declared separately*/
+border-top-left-radius: 100px;
+border-top-right-radius: 100px;
+border-bottom-left-radius: 100px;
+border-bottom-right-radius: 100px;
+box-shadow: none;
+color: transparent;
+mask-image: radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,1) 56%,rgba(0,0,0,1) 100%);
+-webkit-mask-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,1) 56%,rgba(0,0,0,1) 100%);
+position: fixed;
+height: 94px;
+width: 94px;
+margin: -47px 0 0 -47px;
+padding: 0;
+top: 50%;
+left: 50%;
+opacity: 0.89;
+visibility: visible;
+animation:spin .75s infinite linear;
+-webkit-animation:spin .75s infinite linear;
+z-index: 999;
+}
+.loading-content:before {
+background: rgb(233,233,233);
+background: -moz-linear-gradient(left,  rgba(233,233,233,1) 0%, rgba(255,225,191,1) 86%, rgba(255,225,191,1) 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(233,233,233,1)), color-stop(86%,rgba(255,225,191,1)), color-stop(100%,rgba(255,225,191,1)));
+background: -webkit-linear-gradient(left,  rgba(233,233,233,1) 0%,rgba(255,225,191,1) 86%,rgba(255,225,191,1) 100%);
+background: -o-linear-gradient(left,  rgba(233,233,233,1) 0%,rgba(255,225,191,1) 86%,rgba(255,225,191,1) 100%);
+background: -ms-linear-gradient(left,  rgba(233,233,233,1) 0%,rgba(255,225,191,1) 86%,rgba(255,225,191,1) 100%);
+background: linear-gradient(to right,  rgba(233,233,233,1) 0%,rgba(255,225,191,1) 86%,rgba(255,225,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffe1bf',GradientType=1 );
+/*Android 4.2.2 stockbrowser doesn't support border-radiua shorthand, all four corners must be declared separately*/
+border-top-left-radius: 100px;
+border-top-right-radius: 100px;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+content: "";
+display: block;
+height: 50%;
+width: 100%;
+}
+.loading-content:after {
+background: -moz-radial-gradient(center, ellipse cover,  rgba(233,233,233,1) 0%, rgba(233,233,233,1) 55%, rgba(233,233,233,0) 56%, rgba(233,233,233,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(233,233,233,1)), color-stop(55%,rgba(233,233,233,1)), color-stop(56%,rgba(233,233,233,0)), color-stop(100%,rgba(233,233,233,0))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(233,233,233,1) 0%,rgba(233,233,233,1) 55%,rgba(233,233,233,0) 56%,rgba(233,233,233,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(233,233,233,1) 0%,rgba(233,233,233,1) 55%,rgba(233,233,233,0) 56%,rgba(233,233,233,0) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(233,233,233,1) 0%,rgba(233,233,233,1) 55%,rgba(233,233,233,0) 56%,rgba(233,233,233,0) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(233,233,233,1) 0%,rgba(233,233,233,1) 55%,rgba(233,233,233,0) 56%,rgba(233,233,233,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+position: absolute;
+content: '';
+display: block;
+height: 100%;
+width: 100%;
+top: 0px;
+}
+
+/*Android only, when page has loaded and JS has applied browser class replace white filler and css gradients with transparent png for underlying content*/
+/*.loading-content {
+background: url('/img/mobile/loader.png') scroll center center no-repeat transparent;
+background-size: 94px 94px !important;
+}
+.loading-content:before {
+display: none;
+}*/
+/* #000B -------------------- css3 animation keyframes -------------------- */
+@keyframes spin {
+0%   { transform:rotate(0deg); }
+100% { transform:rotate(360deg); }
+}
+@-webkit-keyframes spin {
+0% { -webkit-transform:rotate(0deg); }
+100% { -webkit-transform:rotate(360deg); }
+}
+
 /*DEAL CARDS LANDSCAPE*/
 $squaredCard : 135px;
 $arrowWidth:5px;
@@ -507,14 +616,7 @@ and (orientation : landscape)
        width: auto;
        z-index: 1;
    }
-   
-   
-   /*Color gradient*/
-   .card-subtitle,
-   .cities .card-subtitle,
-   .card-subtitle:after {
-      
-   }
+
    
    .card-subtitle,
    .cities .card-subtitle {
@@ -547,17 +649,11 @@ and (orientation : landscape)
       -webkit-transform:rotate(360deg);
    }
    
-   .card-subtitle {
-      background: -webkit-linear-gradient(#eee, #333);
-   }
-   
    .card-subtitle:after {
       text-shadow: 4px 2px 3px rgba(0, 0, 0, 0.0);
       top: 1px;
-      
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;      
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent;      
    }
    
    
