@@ -1,14 +1,14 @@
-<ul class="topcoat-list list">
 {{#each hotels}}
-    <li class="topcoat-list__item">
-        <a href="#hotel/{{ propertyID }}">
-            <img src='{{ PropertyDetails.photoURL }}'/>
-            <p>{{ PropertyDetails.name }} &nbsp {{ ../color }} 
-                <img src="pics/stars-{{ PropertyDetails.category }}.png" style="width: auto; height: auto; float: none"/>
-            </p>
-            <p>{{ PropertyDetails.address }}</p>
-            <span class="chevron"></span><span class="count">{{ AvailStays.AvailStay.[0].PriceInfo.displayPrice }}€</span>
-        </a>
-    </li>
+       <a class="hotel-card clearFix card-{{ ../color }}" href="#hotel/{{ propertyID }}">
+          <div class="hotel-pic" style="background-image:url('{{ PropertyDetails.photoURL }}');">
+             <div class="hotel-price">
+                <span class="hotel-price-original">{{ AvailStays.AvailStay.[0].PriceInfo.displayPrice }}€</span>
+                <span class="hotel-price-discount">{{ AvailStays.AvailStay.[0].PriceInfo.displayPrice }}€</span>
+             </div>
+          </div>
+          <div class="hotel-info">
+             <p class="hotel-name"><span class="name">{{ PropertyDetails.name }}</span><span class="vicons-star stars_{{ PropertyDetails.category }}">&nbsp;</span></p>
+             <div class="hotel-dealInfo vicons-labelhollow"><span class="tableFix"><span class="tb"><span class="tc">{{ PropertyDetails.address }}</span></span></span></div>
+          </div>
+       </a>       
 {{/each}}
-</ul>
