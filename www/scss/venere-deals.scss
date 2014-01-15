@@ -343,8 +343,11 @@ $hotelCardWidth  : 175px;
 .hotel-card {
     display: block;
     height: $hotelCardHeight;
-    margin: 8px 11px;
+    margin: 14px 11px;
     position: relative;
+}
+.hotel-card:first-child {
+    margin: 21px 11px 14px 11px;
 }
 
 $priceHeight:35px;
