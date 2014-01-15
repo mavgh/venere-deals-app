@@ -10,7 +10,7 @@ define(function(require) {
 
             template_pt = Handlebars.compile(tpl_pt),
             template_ls = Handlebars.compile(tpl_ls),
-            template, map, infowindow, view, propertiesOnMap, isLS = false;
+            template, map, infowindow, view, propertiesOnMap, isLS;
 
     return Backbone.View.extend({
         initialize: function (options) {
@@ -19,6 +19,9 @@ define(function(require) {
              * Replace dummy content with correct call to template data
              **/
             var html = [];
+            //Init global variables
+            view = this;
+            map = null;
 
             var hotelData = {
                 image: 'http://www.mensfitness.com/sites/mensfitness.com/files/imagecache/node_page_image/blog_images/dirty-hotel_main.jpg',
@@ -52,14 +55,14 @@ define(function(require) {
             var supportsOrientationChange = "onorientationchange" in window,
                     orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
             window.addEventListener(orientationEvent, supportsOrientationChange ? this.checkOrientationAndRender : this.checkResizeAndRender, false);
-            view = this;
-            this.collection.on("reset", this.checkOrientationAndRender, this);
+            this.collection.on("reset", supportsOrientationChange ? this.checkOrientationAndRender : this.checkResizeAndRender, this);
         },
         render: function() {
             this.$el.html(template({hotels: this.collection.toJSON()}));
             return this;
         },
         checkOrientationAndRender: function(event) {
+            var prevIsLS = isLS;
             if (window.orientation === -90 || window.orientation === 90) {
                 template = template_ls;
                 isLS = true;
@@ -67,10 +70,13 @@ define(function(require) {
                 template = template_pt;
                 isLS = false;
             }
-            view.render();
-            setTimeout(view.initializeMap(), 1000);
+            if (prevIsLS !== isLS) {
+                view.render();
+                view.initializeMap();
+            }
         },
         checkResizeAndRender: function(event) {
+            var prevIsLS = isLS;
             if (window.innerWidth > window.innerHeight) {
                 template = template_ls;
                 isLS = true;
@@ -78,12 +84,14 @@ define(function(require) {
                 template = template_pt;
                 isLS = false;
             }
-            view.render();
-            setTimeout(view.initializeMap(), 1000);
+            if (prevIsLS !== isLS) {
+                view.render();
+                view.initializeMap();
+            }
         },
         initializeMap: function() {
             if (isLS === true) {
-                this.getPropertyCoords();
+                view.getPropertyCoords();
                 var mapStyles = [{
                         featureType: "poi.business",
                         elementType: "all", // all, labels
@@ -126,7 +134,7 @@ define(function(require) {
 //                context.designOnMap(this, event, true);
 //            });
                 map.fitBounds(propertiesOnMap.bounds);
-                this.initMarkers();
+                view.initMarkers();
             }
         },
         getPropertyCoords: function() {
