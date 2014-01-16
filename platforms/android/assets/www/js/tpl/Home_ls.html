@@ -1,0 +1,30 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="topcoat-navigation-bar__title">Venere Deals LS</h1>
+    </div>
+</div>
+<div class="topcoat-list__container scroller" style="top:63px;">
+    <table class="topcoat-list list">
+    {{#each themes}}
+        {{#if_even @index}}
+        <tr>
+            <td class="topcoat-list__item" style="width: 50%;">
+                <a href="#theme/{{ id }}">
+                    <img src='{{ img }}'/>
+                    <p>{{ title }}</p>
+                    <p> {{ subtitle }}</p>
+                </a>
+            </td>
+        {{else}}
+            <td style="width: 50%;">
+                <a href="#theme/{{ id }}">
+                    <img src='{{ img }}'/>
+                    <p>{{ title }}</p>
+                    <p> {{ subtitle }}</p>
+                </a>
+            </td>
+        </tr>
+        {{/if_even}}
+    {{/each}}
+    </table>
+</div>

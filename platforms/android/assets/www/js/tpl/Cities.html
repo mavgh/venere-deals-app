@@ -1,0 +1,32 @@
+<div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="topcoat-icon-button--quiet back-button" href="#">
+            <span class="topcoat-icon topcoat-icon--back"></span>
+        </a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h1 class="topcoat-navigation-bar__title">Cities of the Deal</h1>
+    </div>
+</div>
+
+<div class="topcoat-list__container scroller cities card-{{ color }}" style="top:138px;">
+    <ul class="topcoat-list list">
+    <p class="theme-title">{{ title }}</p>
+    {{#each cities}}
+        <li class="topcoat-list__item">
+            <a href="#city/{{ id }}/hotels/{{ ../color }}" class="card-{{ ../color }}">
+               
+                <p class="card-title">{{ name }}
+                <span class="landscape-price">{{ price }}<b>{{ amount }}</b></span>
+                </p>
+               
+                <span class="card-subtitle vicons-labelhollow">
+                   <span class="city-name">{{ name }}</span>
+                   <span class="city-price">{{ price }}<b>{{ amount }}</b></span><span class="landscape">Book now</span>
+                </span>
+                <div class="card-pic" style='background-image:url({{ img }})'></div>
+            </a>
+        </li>    
+    {{/each}}
+    </ul>
+</div>

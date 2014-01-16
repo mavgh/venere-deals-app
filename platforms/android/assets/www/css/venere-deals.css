@@ -1,0 +1,802 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600&subset=latin,latin-ext);
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23-dic-2013, 11.59.01
+    Author     : srescio
+*/
+html, body {
+  font-family: 'Open Sans' !important; }
+
+/*COLORS*/
+/*deals colors*/
+.topcoat-navigation-bar {
+  background: #f9f9fa;
+  background: -moz-linear-gradient(top, #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f9f9fa), color-stop(19%, #f4f3f4), color-stop(74%, #d9d4d4), color-stop(93%, #d4cece), color-stop(100%, #d4cece));
+  background: -webkit-linear-gradient(top, #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
+  background: -o-linear-gradient(top, #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
+  background: -ms-linear-gradient(top, #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
+  background: linear-gradient(to bottom, #f9f9fa 0%, #f4f3f4 19%, #d9d4d4 74%, #d4cece 93%, #d4cece 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9fa', endColorstr='#d4cece',GradientType=0 );
+  box-shadow: none; }
+
+.topcoat-navigation-bar:after {
+  background: url("images/venere_deal_logo.png") scroll no-repeat right 0 transparent;
+  background-size: auto 100%;
+  content: "";
+  display: block;
+  height: 36px;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  width: 155px;
+  z-index: 1; }
+
+.topcoat-navigation-bar__title {
+  color: #222222;
+  display: none; }
+
+body,
+#wrapper,
+.topcoat-list__container {
+  background-color: #e9e9e9; }
+
+/* Reduce header size */
+.topcoat-navigation-bar,
+.topcoat-navigation-bar__item {
+  height: 36px; }
+
+.topcoat-list__container {
+  top: 36px !important; }
+
+.topcoat-navigation-bar__item {
+  line-height: 36px; }
+
+.topcoat-icon-button,
+.topcoat-icon-button--quiet,
+.topcoat-icon-button--large,
+.topcoat-icon-button--large--quiet {
+  border: none;
+  line-height: 36px; }
+
+.topcoat-icon-button--quiet:active,
+.topcoat-icon-button--quiet.is-active,
+.topcoat-icon-button--large--quiet:active,
+.topcoat-icon-button--large--quiet.is-active {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #C6C8C8;
+  text-shadow: none;
+  line-height: 32px; }
+
+.topcoat-icon--back {
+  background-image: none !important; }
+
+.back-button:before {
+  content: '\e800';
+  border: 1px solid #222222;
+  border-radius: 100%;
+  color: #222222;
+  display: block;
+  font-size: 30px;
+  height: 25px;
+  left: -5px;
+  line-height: 26px !important;
+  margin: 3px 0 0;
+  position: absolute;
+  text-indent: -3px;
+  width: 25px !important; }
+
+.topcoat-icon-button--quiet.back-button:active:before,
+.topcoat-icon-button--quiet.is-active.back-button:before,
+.topcoat-icon-button--large--quiet.back-button:active:before,
+.topcoat-icon-button--large--quiet.is-active.back-button:before {
+  background-color: #222;
+  border-color: #FFF;
+  box-shadow: 0 0 1px #000000;
+  color: #FFF; }
+
+/*DEAL CARDS*/
+.topcoat-list__item:first-child {
+  border: none; }
+
+.list li,
+.topcoat-list__item {
+  border: none;
+  padding: 0 !important;
+  margin: 5px 10px 13px; }
+
+.list li:last-child,
+.topcoat-list__item:last-child {
+  margin: 5px 10px 40px; }
+
+.list li:active {
+  background: transparent;
+  box-shadow: none; }
+
+.list li:active:before {
+  content: none; }
+
+/*CARDS PORTATRAIT SHADOW*/
+.topcoat-list__item:before {
+  background-color: rgba(0, 0, 0, 0.45);
+  bottom: 15px;
+  box-shadow: 12px 19px 6px rgba(0, 0, 0, 0.45);
+  content: "";
+  display: block;
+  height: 90px;
+  position: absolute;
+  right: 15px;
+  -webkit-transform: rotate(1deg);
+  transform: rotate(2deg);
+  width: 80%; }
+
+.card-pic {
+  background-color: #222;
+  border-top: 2px solid #666;
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: 140px;
+  position: relative; }
+
+.theme-title,
+.card-title {
+  color: #666;
+  font-size: 20px;
+  font-weight: 400 !important;
+  text-shadow: 1px 0 0 #FFFFFF; }
+
+.card-subtitle {
+  background: none repeat scroll 0 0 #666;
+  bottom: 13px;
+  color: #FFF;
+  font-style: italic;
+  height: 38px;
+  /*can be removed for flexible content if no card icon on the right*/
+  margin: 0 120px 0 0;
+  opacity: 0.9;
+  padding: 6px 0 6px 18px;
+  position: absolute;
+  z-index: 1; }
+
+.card-subtitle .description {
+  display: block;
+  font-family: Open Sans;
+  font-size: 16px;
+  height: 100%;
+  line-height: 19px;
+  overflow: hidden;
+  padding: 0 15px 0 0;
+  vertical-align: top; }
+
+.card-subtitle .landscape {
+  display: none; }
+
+/*card subtitle right icon*/
+.card-subtitle:after {
+  content: "";
+  color: #666;
+  display: block;
+  font-size: 49px;
+  height: 49px;
+  position: absolute;
+  right: -40px;
+  top: 0;
+  width: 40px;
+  z-index: -1;
+  text-shadow: 4px 2px 3px rgba(0, 0, 0, 0.26); }
+
+.themes .card-subtitle:after {
+  text-shadow: none; }
+
+/*THEMES COLORS*/
+.card-purple .card-title,
+.card-purple .theme-title {
+  color: #4a396a; }
+.card-purple .card-subtitle {
+  background-color: #7960a9; }
+.card-purple .card-subtitle:after {
+  color: #7960a9; }
+.card-purple .theme-title,
+.card-purple .card-pic {
+  border-color: #7960a9; }
+.card-purple .hotel-dealInfo {
+  background-color: #7960a9; }
+.card-purple .hotel-dealInfo:after {
+  color: #7960a9; }
+.card-purple .hotel-dealInfo .tableFix {
+  background-color: #7960a9; }
+.card-purple .hotel-price-discount {
+  color: #7960a9; }
+@media screen and (orientation: landscape) {
+  .card-purple .card-subtitle,
+  .card-purple .card-subtitle:after {
+    background: #7960a9;
+    background: -moz-linear-gradient(top, #7960a9 0%, #4a396a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7960a9), color-stop(100%, #4a396a));
+    background: -webkit-linear-gradient(top, #7960a9 0%, #4a396a 100%);
+    background: -o-linear-gradient(top, #7960a9 0%, #4a396a 100%);
+    background: -ms-linear-gradient(top, #7960a9 0%, #4a396a 100%);
+    background: linear-gradient(to bottom, #7960a9 0%, #4a396a 100%); } }
+
+.card-red .card-title,
+.card-red .theme-title {
+  color: #801216; }
+.card-red .card-subtitle {
+  background-color: #d91f26; }
+.card-red .card-subtitle:after {
+  color: #d91f26; }
+.card-red .theme-title,
+.card-red .card-pic {
+  border-color: #d91f26; }
+.card-red .hotel-dealInfo {
+  background-color: #d91f26; }
+.card-red .hotel-dealInfo:after {
+  color: #d91f26; }
+.card-red .hotel-dealInfo .tableFix {
+  background-color: #d91f26; }
+.card-red .hotel-price-discount {
+  color: #d91f26; }
+@media screen and (orientation: landscape) {
+  .card-red .card-subtitle,
+  .card-red .card-subtitle:after {
+    background: #d91f26;
+    background: -moz-linear-gradient(top, #d91f26 0%, #801216 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d91f26), color-stop(100%, #801216));
+    background: -webkit-linear-gradient(top, #d91f26 0%, #801216 100%);
+    background: -o-linear-gradient(top, #d91f26 0%, #801216 100%);
+    background: -ms-linear-gradient(top, #d91f26 0%, #801216 100%);
+    background: linear-gradient(to bottom, #d91f26 0%, #801216 100%); } }
+
+.card-gold .card-title,
+.card-gold .theme-title {
+  color: #5d4a19; }
+.card-gold .card-subtitle {
+  background-color: #ad8a2f; }
+.card-gold .card-subtitle:after {
+  color: #ad8a2f; }
+.card-gold .theme-title,
+.card-gold .card-pic {
+  border-color: #ad8a2f; }
+.card-gold .hotel-dealInfo {
+  background-color: #ad8a2f; }
+.card-gold .hotel-dealInfo:after {
+  color: #ad8a2f; }
+.card-gold .hotel-dealInfo .tableFix {
+  background-color: #ad8a2f; }
+.card-gold .hotel-price-discount {
+  color: #ad8a2f; }
+@media screen and (orientation: landscape) {
+  .card-gold .card-subtitle,
+  .card-gold .card-subtitle:after {
+    background: #ad8a2f;
+    background: -moz-linear-gradient(top, #ad8a2f 0%, #5d4a19 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ad8a2f), color-stop(100%, #5d4a19));
+    background: -webkit-linear-gradient(top, #ad8a2f 0%, #5d4a19 100%);
+    background: -o-linear-gradient(top, #ad8a2f 0%, #5d4a19 100%);
+    background: -ms-linear-gradient(top, #ad8a2f 0%, #5d4a19 100%);
+    background: linear-gradient(to bottom, #ad8a2f 0%, #5d4a19 100%); } }
+
+.card-azure .card-title,
+.card-azure .theme-title {
+  color: #335083; }
+.card-azure .card-subtitle {
+  background-color: #5c80c0; }
+.card-azure .card-subtitle:after {
+  color: #5c80c0; }
+.card-azure .theme-title,
+.card-azure .card-pic {
+  border-color: #5c80c0; }
+.card-azure .hotel-dealInfo {
+  background-color: #5c80c0; }
+.card-azure .hotel-dealInfo:after {
+  color: #5c80c0; }
+.card-azure .hotel-dealInfo .tableFix {
+  background-color: #5c80c0; }
+.card-azure .hotel-price-discount {
+  color: #5c80c0; }
+@media screen and (orientation: landscape) {
+  .card-azure .card-subtitle,
+  .card-azure .card-subtitle:after {
+    background: #5c80c0;
+    background: -moz-linear-gradient(top, #5c80c0 0%, #335083 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5c80c0), color-stop(100%, #335083));
+    background: -webkit-linear-gradient(top, #5c80c0 0%, #335083 100%);
+    background: -o-linear-gradient(top, #5c80c0 0%, #335083 100%);
+    background: -ms-linear-gradient(top, #5c80c0 0%, #335083 100%);
+    background: linear-gradient(to bottom, #5c80c0 0%, #335083 100%); } }
+
+.card-green .card-title,
+.card-green .theme-title {
+  color: #377f34; }
+.card-green .card-subtitle {
+  background-color: #61bc5d; }
+.card-green .card-subtitle:after {
+  color: #61bc5d; }
+.card-green .theme-title,
+.card-green .card-pic {
+  border-color: #61bc5d; }
+.card-green .hotel-dealInfo {
+  background-color: #61bc5d; }
+.card-green .hotel-dealInfo:after {
+  color: #61bc5d; }
+.card-green .hotel-dealInfo .tableFix {
+  background-color: #61bc5d; }
+.card-green .hotel-price-discount {
+  color: #61bc5d; }
+@media screen and (orientation: landscape) {
+  .card-green .card-subtitle,
+  .card-green .card-subtitle:after {
+    background: #61bc5d;
+    background: -moz-linear-gradient(top, #61bc5d 0%, #377f34 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #61bc5d), color-stop(100%, #377f34));
+    background: -webkit-linear-gradient(top, #61bc5d 0%, #377f34 100%);
+    background: -o-linear-gradient(top, #61bc5d 0%, #377f34 100%);
+    background: -ms-linear-gradient(top, #61bc5d 0%, #377f34 100%);
+    background: linear-gradient(to bottom, #61bc5d 0%, #377f34 100%); } }
+
+.card-orange .card-title,
+.card-orange .theme-title {
+  color: #964c10; }
+.card-orange .card-subtitle {
+  background-color: #e87c24; }
+.card-orange .card-subtitle:after {
+  color: #e87c24; }
+.card-orange .theme-title,
+.card-orange .card-pic {
+  border-color: #e87c24; }
+.card-orange .hotel-dealInfo {
+  background-color: #e87c24; }
+.card-orange .hotel-dealInfo:after {
+  color: #e87c24; }
+.card-orange .hotel-dealInfo .tableFix {
+  background-color: #e87c24; }
+.card-orange .hotel-price-discount {
+  color: #e87c24; }
+@media screen and (orientation: landscape) {
+  .card-orange .card-subtitle,
+  .card-orange .card-subtitle:after {
+    background: #e87c24;
+    background: -moz-linear-gradient(top, #e87c24 0%, #964c10 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e87c24), color-stop(100%, #964c10));
+    background: -webkit-linear-gradient(top, #e87c24 0%, #964c10 100%);
+    background: -o-linear-gradient(top, #e87c24 0%, #964c10 100%);
+    background: -ms-linear-gradient(top, #e87c24 0%, #964c10 100%);
+    background: linear-gradient(to bottom, #e87c24 0%, #964c10 100%); } }
+
+/* CITIES PAGE */
+.cities .topcoat-list__item:before {
+  content: none; }
+
+.cities .theme-title {
+  margin: 10px;
+  border-bottom: 2px solid; }
+
+.cities .card-title {
+  display: none; }
+
+.cities .card-pic {
+  border: none; }
+
+.cities .city-name {
+  float: left;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 36px; }
+
+.cities .card-subtitle {
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.26);
+  content: "";
+  margin: 0 40px 0 0; }
+
+.cities .city-price {
+  color: rgba(255, 255, 255, 0.75);
+  float: right;
+  font-size: 11px;
+  margin: -2px 0 0;
+  padding: 0 15px 0 40px;
+  text-align: right; }
+
+.cities .city-price b {
+  clear: both;
+  color: #FFFFFF;
+  display: block;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 22px;
+  margin: 0 -2px 0 0; }
+
+/*HOTEL STRIPS*/
+.clearFix:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0; }
+
+.hotel-card {
+  display: block;
+  height: 95px;
+  margin: 14px 11px;
+  position: relative; }
+
+.hotel-card:first-child {
+  margin: 21px 11px 14px 11px; }
+
+.hotel-pic {
+  background-position: center center;
+  background-size: cover;
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 175px; }
+
+.hotel-price {
+  background-color: rgba(255, 255, 255, 0.85);
+  bottom: 11px;
+  height: 35px;
+  padding: 0 6px;
+  position: absolute;
+  right: 0; }
+
+.hotel-price-original {
+  color: #999999;
+  font-size: 18px; }
+
+.hotel-price-discount {
+  font-size: 30px;
+  line-height: 35px;
+  margin-left: 6px; }
+
+.hotel-info {
+  height: 100%; }
+
+.hotel-name {
+  bottom: 40px;
+  font-size: 16px;
+  margin: 0;
+  padding: 10px;
+  position: absolute; }
+
+.hotel-dealInfo {
+  background-color: #222;
+  bottom: 11px;
+  color: #FFFFFF;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 12px;
+  margin-right: 20px;
+  padding: 0 10px 0 6px;
+  position: absolute;
+  height: 35px; }
+
+.hotel-dealInfo:before {
+  background-color: rgba(0, 0, 0, 0);
+  bottom: 15px;
+  box-shadow: 19px 15px 3px rgba(0, 0, 0, 0.6);
+  content: "";
+  display: block;
+  height: 10px;
+  position: absolute;
+  right: 15px;
+  transform: rotate(2deg);
+  width: 80% !important;
+  z-index: 0; }
+
+.hotel-dealInfo:after {
+  color: #222222;
+  font-size: 35px;
+  height: 35px;
+  position: absolute;
+  right: -29px;
+  top: 0; }
+
+.hotel-dealInfo .tableFix {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1; }
+
+.hotel-dealInfo .tb {
+  display: table;
+  height: 100%; }
+
+.hotel-dealInfo .tc {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  z-index: 1; }
+
+.hotel-name,
+.hotel-dealInfo {
+  margin-left: 175px; }
+
+.hotel-name .name {
+  margin: 0 6px 0 0; }
+
+/*STARS RATING*/
+[class*="stars_"] {
+  float: none !important;
+  display: inline-block;
+  font-family: arial;
+  font-size: 10px;
+  color: #666666;
+  margin: 0 0 0;
+  position: relative;
+  top: 3px;
+  overflow: hidden;
+  text-indent: -9999px;
+  height: 14px !important; }
+
+.stars_1 {
+  width: 13px; }
+
+.stars_2 {
+  width: 26px; }
+
+.stars_3 {
+  width: 39px; }
+
+.stars_4 {
+  width: 52px; }
+
+.stars_5 {
+  width: 65px; }
+
+.stars_6 {
+  width: 78px; }
+
+.stars_7 {
+  width: 91px; }
+
+.stars_4L:before {
+  width: 52px; }
+
+.stars_4L {
+  width: 61px; }
+
+.stars_5L:before {
+  width: 65px; }
+
+.stars_5L {
+  width: 74px; }
+
+.stars_6L:before {
+  width: 78px; }
+
+.stars_6L {
+  width: 87px; }
+
+.stars_7L:before {
+  width: 91px; }
+
+.stars_7L {
+  width: 100px; }
+
+/* vicons-star */
+.vicons-star:before,
+[class*="stars_"]:before {
+  content: "\e802\e802\e802\e802\e802\e802\e802";
+  font-size: 22px;
+  height: 20px;
+  left: 0;
+  letter-spacing: -9px;
+  line-height: 11px !important;
+  position: absolute;
+  text-indent: -9px !important;
+  width: auto; }
+
+/* vicons-luxury */
+.hotel-name [class*="L"]:after {
+  background: none repeat scroll 0 0 #E9E9E9;
+  content: "\e803";
+  font-size: 30px;
+  margin: -9px 0 0;
+  position: absolute;
+  right: -27px;
+  text-indent: -20px;
+  width: 8px; }
+
+/*LOADER*/
+.loading-content {
+  background: #ff8800;
+  background: -moz-linear-gradient(left, #ff8800 0%, #ffe1bf 86%, #ffe1bf 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ff8800), color-stop(86%, #ffe1bf), color-stop(100%, #ffe1bf));
+  background: -webkit-linear-gradient(left, #ff8800 0%, #ffe1bf 86%, #ffe1bf 100%);
+  background: -o-linear-gradient(left, #ff8800 0%, #ffe1bf 86%, #ffe1bf 100%);
+  background: -ms-linear-gradient(left, #ff8800 0%, #ffe1bf 86%, #ffe1bf 100%);
+  background: linear-gradient(to right, #ff8800 0%, #ffe1bf 86%, #ffe1bf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8800', endColorstr='#ffe1bf',GradientType=1 );
+  /*Android 4.2.2 stockbrowser doesn't support border-radiua shorthand, all four corners must be declared separately*/
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-shadow: none;
+  color: transparent;
+  mask-image: radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 55%, black 56%, black 100%);
+  -webkit-mask-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 55%, black 56%, black 100%);
+  position: fixed;
+  height: 94px;
+  width: 94px;
+  margin: -47px 0 0 -47px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  opacity: 0.89;
+  visibility: visible;
+  animation: spin .75s infinite linear;
+  -webkit-animation: spin .75s infinite linear;
+  z-index: 999; }
+
+.loading-content:before {
+  background: #e9e9e9;
+  background: -moz-linear-gradient(left, #e9e9e9 0%, #ffe1bf 86%, #ffe1bf 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #e9e9e9), color-stop(86%, #ffe1bf), color-stop(100%, #ffe1bf));
+  background: -webkit-linear-gradient(left, #e9e9e9 0%, #ffe1bf 86%, #ffe1bf 100%);
+  background: -o-linear-gradient(left, #e9e9e9 0%, #ffe1bf 86%, #ffe1bf 100%);
+  background: -ms-linear-gradient(left, #e9e9e9 0%, #ffe1bf 86%, #ffe1bf 100%);
+  background: linear-gradient(to right, #e9e9e9 0%, #ffe1bf 86%, #ffe1bf 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffe1bf',GradientType=1 );
+  /*Android 4.2.2 stockbrowser doesn't support border-radiua shorthand, all four corners must be declared separately*/
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  content: "";
+  display: block;
+  height: 50%;
+  width: 100%; }
+
+.loading-content:after {
+  background: -moz-radial-gradient(center, ellipse cover, #e9e9e9 0%, #e9e9e9 55%, rgba(233, 233, 233, 0) 56%, rgba(233, 233, 233, 0) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #e9e9e9), color-stop(55%, #e9e9e9), color-stop(56%, rgba(233, 233, 233, 0)), color-stop(100%, rgba(233, 233, 233, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #e9e9e9 0%, #e9e9e9 55%, rgba(233, 233, 233, 0) 56%, rgba(233, 233, 233, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #e9e9e9 0%, #e9e9e9 55%, rgba(233, 233, 233, 0) 56%, rgba(233, 233, 233, 0) 100%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #e9e9e9 0%, #e9e9e9 55%, rgba(233, 233, 233, 0) 56%, rgba(233, 233, 233, 0) 100%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, #e9e9e9 0%, #e9e9e9 55%, rgba(233, 233, 233, 0) 56%, rgba(233, 233, 233, 0) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  position: absolute;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0px; }
+
+/*Android only, when page has loaded and JS has applied browser class replace white filler and css gradients with transparent png for underlying content*/
+/*.loading-content {
+background: url('/img/mobile/loader.png') scroll center center no-repeat transparent;
+background-size: 94px 94px !important;
+}
+.loading-content:before {
+display: none;
+}*/
+/* #000B -------------------- css3 animation keyframes -------------------- */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+
+  100% {
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+/*DEAL CARDS LANDSCAPE*/
+@media screen and (orientation: landscape) {
+  .list li,
+  .topcoat-list__item {
+    height: 135px;
+    width: 135px;
+    margin: 13px 16px;
+    float: left;
+    clear: none; }
+
+  .topcoat-list__item:before {
+    content: none; }
+
+  .card-pic {
+    border-top: none;
+    height: 100%; }
+
+  .card-title {
+    background-color: rgba(255, 255, 255, 0.7);
+    bottom: 0;
+    left: 0;
+    font-size: 22px;
+    line-height: 22px;
+    padding: 2px 6px 28px 4px !important;
+    position: absolute;
+    right: 0;
+    width: auto;
+    z-index: 1; }
+
+  .card-subtitle,
+  .cities .card-subtitle {
+    bottom: 6.5px;
+    height: 10px;
+    margin: 0 0 0 -5px;
+    opacity: 1;
+    padding: 4px 0 8px 11px;
+    box-shadow: 9px 3px 3px 0px rgba(0, 0, 0, 0.26); }
+
+  .card-subtitle:before {
+    background-color: #000000;
+    bottom: -2.5px;
+    content: "";
+    height: 0;
+    left: -19px;
+    position: absolute;
+    width: 0; }
+
+  .card-subtitle:before {
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0 5px 2.5px 0;
+    border-color: transparent #000000 transparent transparent;
+    border-style: inset;
+    width: 0px;
+    height: 0px;
+    -webkit-transform: rotate(360deg); }
+
+  .card-subtitle:after {
+    text-shadow: 4px 2px 3px rgba(0, 0, 0, 0);
+    top: 1px;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent; }
+
+  .card-subtitle .landscape {
+    font-size: 11px;
+    font-weight: 400;
+    padding: 0 21px 0 0;
+    text-transform: uppercase; }
+
+  .card-subtitle:after {
+    height: 22px;
+    font-size: 22px;
+    right: -25px; }
+
+  .card-subtitle .description,
+  .cities .card-subtitle .city-name,
+  .cities .card-subtitle .city-price {
+    display: none; }
+
+  .card-subtitle .landscape {
+    display: block; }
+
+  .cities .card-title {
+    display: block; }
+
+  .cities .landscape-price {
+    clear: both;
+    display: block;
+    font-size: 13px;
+    font-style: italic; }
+
+  .cities .landscape-price b {
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0 0 0 6px; } }
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (orientation: landscape) {
+  .card-subtitle:after {
+    top: 0; } }
