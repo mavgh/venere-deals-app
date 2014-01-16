@@ -599,6 +599,11 @@ and (orientation : landscape)
    .topcoat-list__item:before {
       content: none;
    }
+   .list li:last-child,
+   .topcoat-list__item:last-child {
+      margin: 13px 16px;
+   }
+   
    .card-pic {
       border-top: none;
       height: 100%;
