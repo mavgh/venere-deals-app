@@ -46,6 +46,7 @@ define(function (require) {
 
                 //do specific pre-processing 
                 
+                //replace small thumbnail with bigh thumb
                 var availResult = response.XHI_HotelAvailRS.AvailResults.AvailResult;
                 for(var i=0; i<availResult.length; i++) {
                    var photoURL = availResult[i].PropertyDetails.photoURL;
