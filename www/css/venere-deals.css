@@ -33,8 +33,7 @@ html, body {
   position: absolute;
   right: 0;
   top: 1px;
-  width: 155px;
-  z-index: 1; }
+  width: 155px; }
 
 .topcoat-navigation-bar__title {
   color: #222222;
@@ -713,6 +712,10 @@ display: none;
 
   .topcoat-list__item:before {
     content: none; }
+
+  .list li:last-child,
+  .topcoat-list__item:last-child {
+    margin: 13px 16px; }
 
   .card-pic {
     border-top: none;

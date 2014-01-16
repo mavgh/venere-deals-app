@@ -46,6 +46,14 @@ define(function (require) {
 
                 //do specific pre-processing 
                 
+                //replace small thumbnail with bigh thumb
+                var availResult = response.XHI_HotelAvailRS.AvailResults.AvailResult;
+                for(var i=0; i<availResult.length; i++) {
+                   var photoURL = availResult[i].PropertyDetails.photoURL;
+                   var bigPhotoURL = photoURL.replace('.jpg','_b.jpg');
+                   availResult[i].PropertyDetails.photoURL = bigPhotoURL;
+                };
+                
                 console.log("HotelCollection parse - Parsing response:"+JSON.stringify(response.XHI_HotelAvailRS.AvailResults.AvailResult));
                 //Call Backbone's fetch
                 options.success = true;
