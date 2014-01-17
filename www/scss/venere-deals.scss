@@ -357,11 +357,14 @@ $priceHeight:35px;
     position: relative;
     width: $hotelCardWidth;
 }
+
+$hotelPricePadding:6px;
+
 .hotel-price {
     background-color: rgba(255, 255, 255, 0.85);
     bottom: 11px;
     height: $priceHeight;
-    padding: 0 6px;
+    padding: 0 $hotelPricePadding;
     position: absolute;
     right: 0;
 }
@@ -642,6 +645,20 @@ display: none;
 }
 #gallery ul li {
    background-size: cover;
+   background-position: center center;
+}
+
+
+.hdp .hotel-price {
+   right: auto;
+   width: 50%;
+   text-align: right;
+}
+.hdp .hotel-dealInfo {
+   margin-left: 50%;
+   left: $hotelPricePadding * 2;
+   min-width: 30%;
+   max-width: 35%;
 }
 
 

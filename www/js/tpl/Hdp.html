@@ -9,7 +9,7 @@
 </div>
 
 
-<div class="topcoat-list__container scroller">
+<div class="topcoat-list__container scroller hdp">
    <div class="hdp-hotel-info">
       <p class="hdp-hotel-name"><span class="name">{{ PropertyDetails.name }}</span><span class="vicons-star stars_{{ PropertyDetails.category }}">&nbsp;</span></p>
       <div id="stay-parameters">
@@ -25,7 +25,7 @@
          </ul>
       </div>
       
-      <div id="info-price">
+      <div id="info-price" class="card-{{ color }}">
          <div class="hotel-price">
             <span class="hotel-price-original">from</span>
             <span class="hotel-price-discount">{{ AvailStays.AvailStay.[0].PriceInfo.displayPrice }}€</span>
@@ -35,13 +35,6 @@
          
       </div>
       
-   </div>
-   
-   
-   <div class="details">
-       <img src='{{ PropertyDetails.photoURL }}'/>
-       <h1>{{ PropertyDetails.name }}</h1>
-       <h2>{{ PropertyDetails.descr }}</h2>
    </div>
    
     <ul class="topcoat-list list">
