@@ -12,6 +12,8 @@ define(function(require) {
             template_ls = Handlebars.compile(tpl_ls),
             template, map, infowindow, view, propertiesOnMap, color, isLS;
 
+    require('async!http://maps.google.com/maps/api/js?sensor=false');
+
     return Backbone.View.extend({
         initialize: function (options) {
             /**
