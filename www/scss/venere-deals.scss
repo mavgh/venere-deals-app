@@ -655,6 +655,13 @@ display: none;
    width: 50%;
    text-align: right;
 }
+.hotel-price-label {
+   color: #666;
+   font-size: 13px;
+   font-style: italic;
+   font-weight: 400;
+   text-transform: uppercase;
+}
 .hdp .hotel-dealInfo {
    margin-left: 50%;
    left: $hotelPricePadding * 2;
@@ -700,6 +707,23 @@ display: none;
 }
 .room-name {
    color: #222;
+}
+p.room-strip-discount,
+p.romm-strip-price {
+   color: #d81f27;
+   margin: 0;
+}
+.room-strip-discount {
+   font-style: italic;
+   font-weight: 100;
+   font-size: 13px;
+}
+.romm-strip-price {
+   font-weight: 400;
+   font-size: 16px;
+}
+p.romm-strip-price {
+   margin: -5px 0 0 0;
 }
 
 /*DEAL CARDS LANDSCAPE*/
