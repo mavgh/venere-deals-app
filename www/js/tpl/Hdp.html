@@ -31,19 +31,20 @@
             <span class="hotel-price-discount">{{ AvailStays.AvailStay.[0].PriceInfo.displayPrice }}€</span>
          </div>         
          <div class="hotel-dealInfo vicons-labelhollow"><span class="tableFix"><span class="tb"><span class="tc">{{ PropertyDetails.address }}</span></span></span></div>
-         
-         
       </div>
+      
+    <div class="topcoat-list list rooms-list">
+    {{#each AvailStays.AvailStay}}
+        <div class="topcoat-list__item room-strip photo clearFix">
+           <div class="room-strip-info">
+               <p class="room-name">{{ AvailRooms.AvailRoom.[0].roomName }} <span class="vicons-occupancy-2 {{ occupancy }}"></span></p>
+               <span class="count">{{ PriceInfo.displayPrice }}€</span>
+           </div>
+           <div class="room-strip-photo" style="background-image:url'{{PropertyDetails.photoURL}}')">&nbsp;</div>
+        </div>
+    {{/each}}
+    </div>
       
    </div>
    
-    <ul class="topcoat-list list">
-    {{#each AvailStays.AvailStay}}
-        <li class="topcoat-list__item">
-            <p>{{ AvailRooms.AvailRoom.[0].roomName }}</p>
-            <span class="chevron"></span><span class="count">{{ PriceInfo.displayPrice }}€</span>
-            <p>{{ GlobalCancellationPolicy.Clause}}</p>
-        </li>
-    {{/each}}
-    </ul>
 </div>

@@ -752,7 +752,8 @@ display: none;
   height: 100%;
   width: 100%; }
 
-#gallery ul li {
+#gallery ul li,
+.room-strip-photo {
   background-size: cover;
   background-position: center center; }
 
@@ -766,6 +767,41 @@ display: none;
   left: 12px;
   min-width: 30%;
   max-width: 35%; }
+
+.hdp .topcoat-list__item:before {
+  content: none; }
+
+/*ROOMS*/
+.rooms-list {
+  width: 100%; }
+
+.hdp .room-strip {
+  margin: 0;
+  padding: 6px 0 !important;
+  position: relative; }
+
+.room-strip-info {
+  text-align: right;
+  width: auto; }
+
+.room-strip-photo {
+  background-color: orange;
+  height: 85px; }
+
+.room-strip.photo .room-strip-info,
+.room-strip-photo {
+  display: inline-block;
+  overflow: hidden;
+  width: 49%; }
+
+.room-strip-photo {
+  float: right; }
+
+.room-strip-info p {
+  margin: 6px 0; }
+
+.room-name {
+  color: #222; }
 
 /*DEAL CARDS LANDSCAPE*/
 @media screen and (orientation: landscape) {

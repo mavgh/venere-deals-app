@@ -53,18 +53,25 @@
  
 .vicons-occupancy-ten:before { content: '\e800'; } /* '' */
 .vicons-galleryprev:before { content: '\e80c'; } /* '' */
-.vicons-occupancy-single:before { content: '\e802'; } /* '' */
-.vicons-occupancy-seven:before { content: '\e803'; } /* '' */
-.vicons-occupancy-nine:before { content: '\e804'; } /* '' */
-.vicons-occupancy-five:before { content: '\e805'; } /* '' */
-.vicons-occupancy-six:before { content: '\e801'; } /* '' */
+.vicons-occupancy-1:before { content: '\e802'; } /* '' */
+.vicons-occupancy-2:before { content: '\e802\e802'; } /* '' */
+.vicons-occupancy-3:before { content: '\e802\e802\e802'; } /* '' */
+.vicons-occupancy-4:before { content: '\e802\e802\e802\e802'; } /* '' */
+.vicons-occupancy-5:before { content: '\e805'; } /* '' */
+.vicons-occupancy-6:before { content: '\e801'; } /* '' */
+.vicons-occupancy-7:before { content: '\e803'; } /* '' */
+.vicons-occupancy-8:before { content: '\e806'; } /* '' */
+.vicons-occupancy-9:before { content: '\e804'; } /* '' */
 .vicons-calendar:before { content: '\e807'; } /* '' */
 .vicons-guests:before { content: '\e808'; } /* '' */
 .vicons-labelhollow:after { content: '\e809'; } /* '' */
 .vicons-luxury:before { content: '\e80a'; } /* '' */
 .vicons-star-1:before { content: '\e80b'; } /* '' */
-.vicons-occupancy-eight:before { content: '\e806'; } /* '' */
 .back-button:before { content: '\E80C'; }
 .vicons-star:before,
 [class*="stars_"]:before { content: "\E80B\E80B\E80B\E80B\E80B\E80B\E80B"; }
 .hotel-name [class*="L"]:after { content: "\e803"; }
+
+[class*="vicons-occupancy-"]:before {
+   letter-spacing: -8px;
+}
