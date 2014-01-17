@@ -16,7 +16,7 @@ define(function (require) {
                         +'"start":"'+options.data.startDate+'","duration":"P1D","numGuests":"2","numRooms":"1",avoidCache="false","AvailQueryByProperty":{"propertyIDs":"'+options.data.propertyID+'"},'
                         +'"AvailResultFormat":{"maxResultItems":"10","offsetResultItems":"0","showPropertyDetails":"true","showDailyRates":"true",'
                         +'"showRoomCancellationPolicies":"false","langID":"it","orderBy":"category","orderDir":"desc"}}}';
-                console.log("Hotel fetch - Sending request:"+this.url);
+//                console.log("Hotel fetch - Sending request:"+this.url);
                 //Call Backbone's fetch
                 return Backbone.Collection.prototype.fetch.call(this, options);
             }
@@ -37,7 +37,7 @@ define(function (require) {
                         +'"start":"'+options.data.startDate+'","duration":"P1D","numGuests":"2","numRooms":"1",avoidCache="false","AvailQueryByGeo":{"geoIDs":"'+options.data.geoID+'"},'
                         +'"AvailResultFormat":{"maxResultItems":"10","offsetResultItems":"0","showPropertyDetails":"true","showDailyRates":"true",'
                         +'"showRoomCancellationPolicies":"false","langID":"it","orderBy":"category","orderDir":"desc"}}}';
-                console.log("HotelCollection fetch - Sending request:"+this.url);
+//                console.log("HotelCollection fetch - Sending request:"+this.url);
                 //Call Backbone's fetch
                 return Backbone.Collection.prototype.fetch.call(this, options);
             },
@@ -54,7 +54,7 @@ define(function (require) {
                    availResult[i].PropertyDetails.photoURL = bigPhotoURL;
                 };
                 
-                console.log("HotelCollection parse - Parsing response:"+JSON.stringify(response.XHI_HotelAvailRS.AvailResults.AvailResult));
+//                console.log("HotelCollection parse - Parsing response:"+JSON.stringify(response.XHI_HotelAvailRS.AvailResults.AvailResult));
                 //Call Backbone's fetch
                 options.success = true;
                 options.fromcollection = true;
