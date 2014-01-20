@@ -126,7 +126,7 @@ define(function(require) {
             }
 
             propertiesOnMap.bounds = bounds;
-            console.log(propertiesOnMap.bounds.getCenter());
+//            console.log(propertiesOnMap.bounds.getCenter());
         },
         initMarkers: function() {
             this.markersList = [];
