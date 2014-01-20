@@ -1,3 +1,5 @@
 /nbproject
 node_modules
 /platforms/android
+/platforms/wp8
+/plugins/wp8.json
