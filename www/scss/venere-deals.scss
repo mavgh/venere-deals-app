@@ -97,7 +97,6 @@ $headerDelta  : 4px;
    background-image: none !important;
 }
 .back-button:before {
-   content: '\e800';
     border: 1px solid #222222;
     border-radius: 100%;
     color: #222222;
@@ -358,11 +357,14 @@ $priceHeight:35px;
     position: relative;
     width: $hotelCardWidth;
 }
+
+$hotelPricePadding:6px;
+
 .hotel-price {
     background-color: rgba(255, 255, 255, 0.85);
     bottom: 11px;
     height: $priceHeight;
-    padding: 0 6px;
+    padding: 0 $hotelPricePadding;
     position: absolute;
     right: 0;
 }
@@ -474,7 +476,6 @@ $starWidth:13px;
 /* vicons-star */
 .vicons-star:before,
 [class*="stars_"]:before {
-content: "\e802\e802\e802\e802\e802\e802\e802";
 font-size: 22px;
 height: 20px;
 left: 0;
@@ -487,7 +488,6 @@ width: auto;
 /* vicons-luxury */
 .hotel-name [class*="L"]:after {
 background: none repeat scroll 0 0 #E9E9E9;
-content: "\e803";
 font-size: 30px;
 margin: -9px 0 0;
 position: absolute;
@@ -580,6 +580,150 @@ display: none;
 @-webkit-keyframes spin {
 0% { -webkit-transform:rotate(0deg); }
 100% { -webkit-transform:rotate(360deg); }
+}
+
+/*Hotel Detail Page*/
+.hdp-hotel-info {
+   padding: 0 13px;
+}
+#info-price {
+   position: relative;
+}
+.hdp-hotel-name {
+   margin: 6px 0;
+}
+.hdp-hotel-name .name {
+   font-size: 22px;
+   margin : 0 8px 0 0;
+}
+
+#stay-parameters {
+   background-color: #CCC;
+   font-size: 12px;
+   padding: 4px;
+}
+#dates,
+#rooms-number {
+   font-weight: 700;
+}
+
+#dates,
+#guest-rooms {
+   display: inline;
+}
+#dates {
+   margin: 0 13px 0 0;
+}
+#dates:after {
+   background-color: #FFF;
+   content: '';
+   display: block;
+   height: 5px;
+   width: 8px;
+   position: absolute;
+   margin: -9px 0 0 4px;
+}
+
+
+#overview {
+   margin: 0 13px;
+}
+
+
+#gallery {
+   height: 212px;
+}
+#gallery ul {
+   margin: 0;
+   list-style: none;
+   padding: 0;
+}
+#gallery ul,
+#gallery ul li {
+   height: 100%;
+   width: 100%;   
+}
+#gallery ul li,
+.room-strip-photo {
+   background-size: cover;
+   background-position: center center;
+}
+
+
+.hdp .hotel-price {
+   right: auto;
+   width: 50%;
+   text-align: right;
+}
+.hotel-price-label {
+   color: #666;
+   font-size: 13px;
+   font-style: italic;
+   font-weight: 400;
+   text-transform: uppercase;
+}
+.hdp .hotel-dealInfo {
+   margin-left: 50%;
+   left: $hotelPricePadding * 2;
+   min-width: 30%;
+   max-width: 35%;
+}
+.hdp .topcoat-list__item:before {
+   content: none;
+}
+
+
+/*ROOMS*/
+.rooms-list {
+   width: 100%;
+}
+.hdp .room-strip {
+   margin: 0;
+   padding: 6px 0 !important;
+   position: relative;
+}
+.room-strip-info {
+   text-align: right;
+   width: auto;
+}
+
+.room-strip-photo {
+   background-color: orange;
+   height: 85px;
+}
+
+.room-strip.photo .room-strip-info,
+.room-strip-photo {
+   display: inline-block;
+   overflow: hidden;
+   width: 49%;
+}
+.room-strip-photo {
+   float: right;
+}
+
+.room-strip-info p {
+   margin: 6px 0;
+}
+.room-name {
+   color: #222;
+}
+p.room-strip-discount,
+p.romm-strip-price {
+   color: #d81f27;
+   margin: 0;
+}
+.room-strip-discount {
+   font-style: italic;
+   font-weight: 100;
+   font-size: 13px;
+}
+.romm-strip-price {
+   font-weight: 400;
+   font-size: 16px;
+}
+p.romm-strip-price {
+   margin: -5px 0 0 0;
 }
 
 /*DEAL CARDS LANDSCAPE*/

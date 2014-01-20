@@ -7,10 +7,14 @@
     <author email="xmen@expedia.com" href="http://www.venere.com">
         Venere XMen Team
     </author>
+    <icon src="res/icons/" />
+    <splash src="res/splash/" />
     <content src="index.html" />
     <access origin="*" subdomains="true" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
+    <preference name="SplashScreen" value="ic_launcher"/>
+    <preference name="SplashScreenDelay" value="3000"/>
     <feature name="Console">
         <param name="ios-package" value="CDVLogger" />
     </feature>
