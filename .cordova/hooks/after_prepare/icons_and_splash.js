@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+console.log ('Starting icons_and_splash');
 var cordova_util = require('cordova/src/util');
 var projectRoot = cordova_util.isCordova(process.cwd());
 var projectXml = cordova_util.projectConfig(projectRoot);
@@ -72,7 +72,14 @@ var platformDir = {
   },
   blackberry10: {},
   wp7: {},
-  wp8: {}
+  wp8: {
+    icon:"/",
+    splash:"/",
+    nameMap: {
+      "ApplicationIcon.png": "ApplicationIcon.png",
+      "SplashScreenImage.jpg": "SplashScreenImage.jpg"
+    }
+  }
 }
 
 function copyAsset (scope, node) {
@@ -80,6 +87,7 @@ function copyAsset (scope, node) {
   var platform = node.attrib['gap:platform'];
   var density  = node.attrib['gap:density'];
   var assetDirTmpl = platformDir[platform] && platformDir[platform][scope];
+  console.log ('assetDirTmpl '+assetDirTmpl);
 
   if (!assetDirTmpl) {
     throw new Error('Platform and density not supported: ' + platform + ', ' + density);
@@ -137,7 +145,10 @@ projectConfig.doc.findall('icon').map(function (node) {
       copyAsset('icon', { attrib: { 'gap:platform': 'android', src: node.attrib.src + 'android/icon-72-hdpi.png', 'gap:density': 'hdpi' } });
       copyAsset('icon', { attrib: { 'gap:platform': 'android', src: node.attrib.src + 'android/icon-96-xhdpi.png', 'gap:density': 'xhdpi' } });
     }
-
+    if (~projectPlatforms.indexOf('wp8')) {
+      // Android
+      copyAsset('icon', { attrib: { 'gap:platform': 'wp8', src: node.attrib.src + 'wp8/ApplicationIcon.png' } });
+    }
     if (~projectPlatforms.indexOf('ios')) {
       // iOS >= 7 Settings icon
       // iOS <= 6.1 Small icon for Spotlight search results and Settings (recommended) iPhone
@@ -183,7 +194,10 @@ projectConfig.doc.findall('splash').map(function (node) {
       copyAsset('splash', { attrib: { 'gap:platform': 'android', src: node.attrib.src + 'android/screen-hdpi-portrait.png', 'gap:density': 'hdpi' } });
       copyAsset('splash', { attrib: { 'gap:platform': 'android', src: node.attrib.src + 'android/screen-xhdpi-portrait.png', 'gap:density': 'xhdpi' } });
     }
-
+    if (~projectPlatforms.indexOf('wp8')) {
+      // Android
+      copyAsset('splash', { attrib: { 'gap:platform': 'wp8', src: node.attrib.src + 'wp8/SplashScreenImage.jpg' } });
+    }
     if (~projectPlatforms.indexOf('ios')) {
     }
 
