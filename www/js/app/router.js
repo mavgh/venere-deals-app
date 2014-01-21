@@ -13,7 +13,7 @@ define(function (require) {
         
         startDate   = "",
 
-        homeView = new HomeView({dispatcher:dispatcher});
+        homeView = new HomeView();
 
     return Backbone.Router.extend({
 
