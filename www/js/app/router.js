@@ -19,7 +19,7 @@ define(function (require) {
             "": "home",
             "theme/:id/:color": "themeDetails",
             "city/:id/hotels/:color": "hotels",
-            "hotel/:id": "hdp"
+            "hotel/:id/:color": "hdp"
         },
 
         home: function () {
@@ -51,12 +51,12 @@ define(function (require) {
             });
         },
         
-        hdp: function (id) {
+        hdp: function (id,color) {
             require(["app/models/hotel", "app/views/hdp"], function (models, hdpView) {
                 var hotel = new models.Hotel();
                 hotel.fetch({ data: { propertyID: id, startDate: startDate},
                     success: function (data) {
-                        slider.slidePage(new hdpView({model: data, startDate: startDate}).$el);
+                        slider.slidePage(new hdpView({model: data, startDate: startDate,color:color}).$el);
                     }
                 });
             });

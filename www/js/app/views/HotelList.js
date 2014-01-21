@@ -185,7 +185,7 @@ define(function(require) {
             //div with hotel name and stars
             htmlStruct.push('<div class="hotelnamestars">');
             //title
-            htmlStruct.push('<a href="' + hotelUrl + '">' + name + ' </a>');
+            htmlStruct.push('<a href="' + hotelUrl + "/" + color + '">' + name + ' </a>');
             //rating
             if (rating !== undefined && rating !== '') {
                 htmlStruct.push('<img alt="' + rating + '" src="pics/stars-'+rating+'.png"/>');
@@ -194,7 +194,7 @@ define(function(require) {
             
             htmlStruct.push('<div class="infoballoon">');
             //photo
-            htmlStruct.push('<a href="' + hotelUrl + '"><img alt="' + name + '"  src="' + hotelPath + '" alt="" title="" class="nsm24" height="64" width="64" /></a>');
+            htmlStruct.push('<a href="' + hotelUrl + "/" + color + '"><img alt="' + name + '"  src="' + hotelPath + '" alt="" title="" class="nsm24" height="64" width="64" /></a>');
             //price box
             htmlStruct.push('<span>' + price + currency + '</span>');
             htmlStruct.push('</div>');

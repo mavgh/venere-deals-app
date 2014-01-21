@@ -11,7 +11,7 @@
 
 <div class="topcoat-list__container scroller hdp">
    <div class="hdp-hotel-info">
-      <p class="hdp-hotel-name"><span class="name">{{ PropertyDetails.name }}</span><span class="vicons-star stars_{{ PropertyDetails.category }}">&nbsp;</span></p>
+      <p class="hdp-hotel-name"><span class="name">{{ detail.PropertyDetails.name }}</span><span class="vicons-star stars_{{ detail.PropertyDetails.category }}">&nbsp;</span></p>
       <div id="stay-parameters">
          <p id="dates" class="vicons-calendar"><span id="check-in">February 22</span> - <span id="check-out">February 23</span></p>
          <p id="guest-rooms" class="vicons-guests"><span id="rooms-number">1 room</span> <span id="occupancy">(2 adults, 0 children)</span></p>
@@ -21,23 +21,22 @@
    <div id="overview">
       <div id="gallery">
          <ul>
-            <li style="background-image:url('{{ PropertyDetails.photoURL }}')"></li>
+            <li style="background-image:url('{{ detail.PropertyDetails.photoURL }}')"></li>
          </ul>
       </div>
       
       <div id="info-price" class="card-{{ color }}">
          <div class="hotel-price">
             <span class="hotel-price-label">from</span>
-            <span class="hotel-price-discount">€{{ AvailStays.AvailStay.[0].PriceInfo.displayPrice }}</span>
+            <span class="hotel-price-discount">€{{ detail.AvailStays.AvailStay.[0].PriceInfo.displayPrice }}</span>
          </div>         
-         <div class="hotel-dealInfo vicons-labelhollow"><span class="tableFix"><span class="tb"><span class="tc">{{ PropertyDetails.address }}</span></span></span></div>
+         <div class="hotel-dealInfo vicons-labelhollow"><span class="tableFix"><span class="tb"><span class="tc">{{ detail.PropertyDetails.address }}</span></span></span></div>
       </div>
-      
     <div class="topcoat-list list rooms-list">
-    {{#each AvailStays.AvailStay}}
+    {{#each detail.AvailStays.AvailStay}}
         <div class="topcoat-list__item room-strip photo clearFix">
            <div class="room-strip-info">
-               <p class="room-name">{{ AvailRooms.AvailRoom.[0].roomName }} <span class="vicons-occupancy-2 {{ occupancyValue }}"></span></p>
+               <p class="room-name">{{ AvailRooms.AvailRoom.[0].roomName }} <span class="vicons-occupancy-2 {{ AvailRooms.AvailRoom.[0].standardOccupancy }}"></span></p>
                <p class="room-strip-discount">Save €8</p>
                <p class="romm-strip-price">€{{ PriceInfo.displayPrice }}</p>
            </div>
@@ -45,7 +44,10 @@
         </div>
     {{/each}}
     </div>
-      
+    <div id="map-canvas" style="height: 200px; width: 100%;">&nbsp;</div>
+    <div id="book-now" style="background-color: green;text-align: center;font-size: larger;font-weight: bold;color: white;">
+        <a href="tel:0291483082"><p>Book Now</p></a>
+    </div>
+   <br/>
    </div>
-   
 </div>
