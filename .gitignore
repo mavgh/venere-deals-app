@@ -4,3 +4,4 @@ node_modules
 /platforms/wp8
 /plugins/wp8.json
 Thumbs.db
+/plugins/android.json
