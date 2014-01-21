@@ -3,15 +3,17 @@ define(function (require) {
     "use strict";
 
     var $           = require('jquery'),
+        _           = require('underscore'),
         Backbone    = require('backbone'),
         PageSlider  = require('app/utils/pageslider'),
         HomeView    = require('app/views/Home'),
+        dispatcher  = _.clone(Backbone.Events),
 
         slider = new PageSlider($('#wrapper')),
         
         startDate   = "",
 
-        homeView = new HomeView();
+        homeView = new HomeView({dispatcher:dispatcher});
 
     return Backbone.Router.extend({
 
@@ -24,6 +26,7 @@ define(function (require) {
 
         home: function () {
             homeView.delegateEvents();
+            dispatcher.trigger( 'OnClose' );
             slider.slidePage(homeView.$el);
         },
 
@@ -34,7 +37,8 @@ define(function (require) {
                 theme.fetch({
                     success: function (data) {
                         startDate=data.attributes.start;
-                        slider.slidePage(new CitiesView({model: data}).$el);
+                        dispatcher.trigger( 'OnClose' );
+                        slider.slidePage(new CitiesView({model: data, dispatcher:dispatcher}).$el);
                     }
                 });
             });
@@ -45,7 +49,8 @@ define(function (require) {
                 var city = new models.City({id: id});
                 city.fetch({
                     success: function (data) {
-                        slider.slidePage(new HotelsView({model: data, startDate: startDate,color:color}).$el);
+                        dispatcher.trigger( 'OnClose' );
+                        slider.slidePage(new HotelsView({model: data, startDate: startDate,color:color, dispatcher:dispatcher}).$el);
                     }
                 });
             });
@@ -56,7 +61,8 @@ define(function (require) {
                 var hotel = new models.Hotel();
                 hotel.fetch({ data: { propertyID: id, startDate: startDate},
                     success: function (data) {
-                        slider.slidePage(new hdpView({model: data, startDate: startDate,color:color}).$el);
+                        dispatcher.trigger( 'OnClose' );
+                        slider.slidePage(new hdpView({model: data, startDate: startDate,color:color, dispatcher:dispatcher}).$el);
                     }
                 });
             });

@@ -3,14 +3,15 @@ define(function(require) {
     "use strict";
 
     var $                   = require('jquery'),
+        _                   = require('underscore'),
         Handlebars          = require('handlebars'),
         Backbone            = require('backbone'),
         tpl_pt              = require('text!tpl/HotelList.html'),
         tpl_ls              = require('text!tpl/HotelList_ls.html'),
 
-            template_pt = Handlebars.compile(tpl_pt),
-            template_ls = Handlebars.compile(tpl_ls),
-            template, map, infowindow, view, propertiesOnMap, color, isLS;
+        template_pt = Handlebars.compile(tpl_pt),
+        template_ls = Handlebars.compile(tpl_ls),
+        template, map, infowindow, view, propertiesOnMap, color, isLS;
 
     require('async!http://maps.google.com/maps/api/js?sensor=false');
 
@@ -25,12 +26,23 @@ define(function(require) {
             map = null;
             isLS = null;
             color = options.color;
+            this.dispatcher = options.dispatcher;
+            this.dispatcher.on( 'OnClose', this.close, this );
             $(html).prependTo(this.$el);
-            var supportsOrientationChange = "onorientationchange" in window,
-                    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
-            window.addEventListener(orientationEvent, supportsOrientationChange ? this.checkOrientationAndRender : this.checkResizeAndRender, false);
-
-            this.collection.on("reset", supportsOrientationChange ? this.checkOrientationAndRender : this.checkResizeAndRender, this);
+            var supportsOrientationChange = "onorientationchange" in window;
+            this.orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+            this.orientationChangeHandler = supportsOrientationChange ? this.checkOrientationAndRender : this.checkResizeAndRender;
+            window.addEventListener(this.orientationEvent, this.orientationChangeHandler, false);
+            this.collection.on("reset", this.orientationChangeHandler, this);
+        },
+        close: function() {
+            // Unregister for event to stop memory leak
+            console.log("Closing HotelList");
+            this.dispatcher.off('OnClose', this.close, this);
+            this.remove();
+            this.unbind();
+            this.views = [];   // Clear the view array
+            window.removeEventListener(this.orientationEvent, this.orientationChangeHandler, false)
         },
         render: function() {
             this.$el.html(template({hotels: this.collection.toJSON(), color: color}));

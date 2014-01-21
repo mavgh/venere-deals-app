@@ -6,7 +6,7 @@ define(function (require) {
         Handlebars          = require('handlebars'),
         models              = require('app/models/theme'),
         tpl                 = require('text!tpl/Home.html'),
-        template = Handlebars.compile(tpl),template, view;
+        template = Handlebars.compile(tpl);
 
         Handlebars.registerHelper('if_even', function(conditional, options) {
           if((conditional % 2) === 0) {
@@ -21,7 +21,6 @@ define(function (require) {
         initialize: function () {
             this.themeList = new models.ThemeCollection();
             this.themeList.fetch({reset: true, data: {}});
-            view = this;
             this.render();
         },
 

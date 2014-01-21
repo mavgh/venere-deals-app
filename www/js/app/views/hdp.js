@@ -16,10 +16,19 @@ define(function (require) {
             view = this;
             map = null;
             color = options.color;
+            this.dispatcher = options.dispatcher;
+            this.dispatcher.on( 'OnClose', this.close, this );
             this.render();
             setTimeout(this.initializeMap,100);
         },
-
+        close: function() {
+            // Unregister for event to stop memory leak
+            console.log("Closing hdp");
+            this.dispatcher.off('OnClose', this.close, this);
+            this.remove();
+            this.unbind();
+            this.views = [];   // Clear the view array
+        },
         render: function () {
 //            console.log("hdp view - Rendering response:"+JSON.stringify(this.model.attributes.XHI_HotelAvailRS.AvailResults.AvailResult[0]));
 
@@ -28,8 +37,6 @@ define(function (require) {
             var photoURL = availResult.PropertyDetails.photoURL;
             var bigPhotoURL = photoURL.replace('.jpg','_b.jpg');
             availResult.PropertyDetails.photoURL = bigPhotoURL;
-            console.log(availResult);
-            
             
             this.$el.html(template({detail: availResult, color: color}));
             return this;
