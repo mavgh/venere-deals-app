@@ -11,9 +11,7 @@ define(function (require) {
 
         slider = new PageSlider($('#wrapper')),
         
-        startDate   = "",
-
-        homeView = new HomeView();
+        startDate   = "";
 
     return Backbone.Router.extend({
 
@@ -25,12 +23,13 @@ define(function (require) {
         },
 
         home: function () {
-            homeView.delegateEvents();
+            console.log("Routing to 'home'");
             dispatcher.trigger( 'OnClose' );
-            slider.slidePage(homeView.$el);
+            slider.slidePage(new HomeView({dispatcher:dispatcher}).$el);
         },
 
         themeDetails: function (id , color) {
+            console.log("Routing to 'themeDetails'");
             require(["app/models/theme", "app/views/Cities"], function (models, CitiesView) {
                 var theme = new models.Theme({id: id, color: color});
                 
@@ -45,6 +44,7 @@ define(function (require) {
         },
         
         hotels: function (id,color) {
+            console.log("Routing to 'hotels'");
             require(["app/models/city", "app/views/Hotels"], function (models, HotelsView) {
                 var city = new models.City({id: id});
                 city.fetch({
@@ -57,6 +57,7 @@ define(function (require) {
         },
         
         hdp: function (id,color) {
+            console.log("Routing to 'hdp'");
             require(["app/models/hotel", "app/views/hdp"], function (models, hdpView) {
                 var hotel = new models.Hotel();
                 hotel.fetch({ data: { propertyID: id, startDate: startDate},
