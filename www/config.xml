@@ -12,7 +12,8 @@
     <content src="index.html" />
     <access origin="*" subdomains="true" />
     <preference name="fullscreen" value="true" />
-    <preference name="webviewbounce" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="DisallowOverscroll" value="true"/>
     <preference name="SplashScreen" value="ic_launcher"/>
     <preference name="SplashScreenDelay" value="3000"/>
     <feature name="Console">
