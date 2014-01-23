@@ -5,13 +5,27 @@ define(function (require) {
     var $           = require('jquery'),
         _           = require('underscore'),
         Backbone    = require('backbone'),
+        Handlebars  = require('handlebars'),
         PageSlider  = require('app/utils/pageslider'),
         HomeView    = require('app/views/Home'),
         dispatcher  = _.clone(Backbone.Events),
+        theme,hotel,hotelCatalogue,
 
         slider = new PageSlider($('#wrapper')),
         
         startDate   = "";
+
+    Handlebars.registerHelper('lookup', function(obj, field) {
+        return obj[field];
+    });
+
+    Handlebars.registerHelper('if_even', function(conditional, options) {
+      if((conditional % 2) === 0) {
+        return options.fn(this);
+      } else {
+        return options.inverse(this);
+      }
+    });    
 
     return Backbone.Router.extend({
 
@@ -30,15 +44,12 @@ define(function (require) {
 
         themeDetails: function (id , color) {
             console.log("Routing to 'themeDetails'");
-            require(["app/models/theme", "app/views/Cities"], function (models, CitiesView) {
-                var theme = new models.Theme({id: id, color: color});
-                
-                theme.fetch({
-                    success: function (data) {
-                        startDate=data.attributes.start;
-                        dispatcher.trigger( 'OnClose' );
-                        slider.slidePage(new CitiesView({model: data, dispatcher:dispatcher}).$el);
-                    }
+            require(["app/models/theme", "app/views/Cities"], function(models, CitiesView) {
+                theme = new models.Theme({id: id, color: color});
+                $.when(theme.fetch()).done(function() {
+                    startDate = theme.attributes.start;
+                    dispatcher.trigger('OnClose');
+                    slider.slidePage(new CitiesView({model: theme, dispatcher: dispatcher}).$el);
                 });
             });
         },
@@ -59,12 +70,11 @@ define(function (require) {
         hdp: function (id,color) {
             console.log("Routing to 'hdp'");
             require(["app/models/hotel", "app/views/hdp"], function (models, hdpView) {
-                var hotel = new models.Hotel();
-                hotel.fetch({ data: { propertyID: id, startDate: startDate},
-                    success: function (data) {
-                        dispatcher.trigger( 'OnClose' );
-                        slider.slidePage(new hdpView({model: data, startDate: startDate,color:color, dispatcher:dispatcher}).$el);
-                    }
+                hotel = new models.Hotel(); //hotel.fetch({data: { propertyID: id, startDate: startDate}}),
+                hotelCatalogue = new models.HotelCatalogue(); //,hotelCatalogue.fetch({ data: { propertyID: id}})
+                $.when(hotel.fetch({data: { propertyID: id, startDate: startDate}}), hotelCatalogue.fetch({ data: { propertyID: id}})).done(function() {
+                    dispatcher.trigger( 'OnClose' );
+                    slider.slidePage(new hdpView({model: hotel, catalogue:hotelCatalogue, startDate: startDate,color:color, dispatcher:dispatcher}).$el);
                 });
             });
         }

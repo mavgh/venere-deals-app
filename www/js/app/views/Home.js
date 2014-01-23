@@ -7,14 +7,6 @@ define(function (require) {
         models              = require('app/models/theme'),
         tpl                 = require('text!tpl/Home.html'),
         template = Handlebars.compile(tpl);
-
-        Handlebars.registerHelper('if_even', function(conditional, options) {
-          if((conditional % 2) === 0) {
-            return options.fn(this);
-          } else {
-            return options.inverse(this);
-          }
-        });    
         
     return Backbone.View.extend({
 

@@ -15,6 +15,7 @@
       <div id="stay-parameters">
          <p id="dates" class="vicons-calendar"><span id="check-in">February 22</span> - <span id="check-out">February 23</span></p>
          <p id="guest-rooms" class="vicons-guests"><span id="rooms-number">1 room</span> <span id="occupancy">(2 adults, 0 children)</span></p>
+         <p>User Rating {{catalogue.userRating}} </p>
       </div>
    </div>
    
@@ -40,7 +41,7 @@
                <p class="room-strip-discount">Save €8</p>
                <p class="romm-strip-price">€{{ PriceInfo.displayPrice }}</p>
            </div>
-           <div class="room-strip-photo" style="background-image:url('{{PropertyDetails.photoURL}}')">&nbsp;</div>
+           <div class="room-strip-photo" style="background-image:url('{{lookup ../catalogue.RoomImageURL @index}}')">&nbsp;</div>
         </div>
     {{/each}}
     </div>

@@ -5,7 +5,7 @@ define(function (require) {
     var $                = require('jquery'),
         Handlebars       = require('handlebars'),
         Backbone         = require('backbone'),
-        model            = require('app/models/hotel'),
+        hotelCatalogue   = require('app/models/hotel'),
         tpl              = require('text!tpl/Hdp.html'),
         map = null, view=null, propertyOnMap = null, color,
         template = Handlebars.compile(tpl);
@@ -16,6 +16,7 @@ define(function (require) {
             view = this;
             map = null;
             color = options.color;
+            hotelCatalogue = options.catalogue;
             this.dispatcher = options.dispatcher;
             this.dispatcher.on( 'OnClose', this.close, this );
             this.render();
@@ -38,7 +39,7 @@ define(function (require) {
             var bigPhotoURL = photoURL.replace('.jpg','_b.jpg');
             availResult.PropertyDetails.photoURL = bigPhotoURL;
             
-            this.$el.html(template({detail: availResult, color: color}));
+            this.$el.html(template({detail: availResult, color: color, catalogue: hotelCatalogue.attributes}));
             return this;
         },
         initializeMap: function() {
