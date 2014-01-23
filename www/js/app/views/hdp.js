@@ -54,6 +54,7 @@ define(function (require) {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 scaleControl: true,
                 styles: mapStyles,
+                streetViewControl: true,
                 mapTypeControlOptions: {
                     style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
                 },
@@ -65,6 +66,17 @@ define(function (require) {
             map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
 //            map.fitBounds(propertyOnMap.bounds);
             view.initMarkers();
+            var panorama = map.getStreetView();
+            panorama.setOptions({
+                position: propertyOnMap.position,
+                addressControlOptions: { position: google.maps.ControlPosition.BOTTOM_CENTER },
+                linksControl: false,
+                panControl: false,
+                zoomControlOptions: { style: google.maps.ZoomControlStyle.SMALL },
+                enableCloseButton: false,
+                pov: {heading: 30, pitch: 0, zoom: 0}
+            });
+            panorama.setVisible(true);
         },
         getPropertyCoords: function() {
             var bounds = new google.maps.LatLngBounds();
