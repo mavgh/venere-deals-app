@@ -57,6 +57,11 @@ body,
    background-color: $appBkColor;
 }
 
+.topcoat-list {
+  margin:20px 0;
+   border: none;
+}
+
 /* Reduce header size */
 $headerHeight : 36px;
 $headerDelta  : 4px;
@@ -186,6 +191,7 @@ $headerDelta  : 4px;
     padding: 6px 0 6px 18px;
     position: absolute;
     z-index: 1;
+    
 }
 .card-subtitle .description {
     display: block;
@@ -237,6 +243,7 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
       }
       .card-subtitle:after {
          color: nth($color, 2);
+         line-height: 1.03em;
       }
       .theme-title,
       .card-pic {
@@ -260,19 +267,9 @@ $card: purple #7960a9, red #d91f26, gold #ad8a2f, azure #5c80c0, green #61bc5d, 
       @media screen 
       and (orientation : landscape) 
       {
-         $startColor:nth($color, 2);
-         $endColor  :darken( nth($color, 2), 20% );
-         
-         .card-subtitle,
-         .card-subtitle:after {   
-            background: $startColor;
-            background: -moz-linear-gradient(top,  $startColor 0%, $endColor 100%);
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$startColor), color-stop(100%,$endColor));
-            background: -webkit-linear-gradient(top,  $startColor 0%,$endColor 100%);
-            background: -o-linear-gradient(top,  $startColor 0%,$endColor 100%);
-            background: -ms-linear-gradient(top,  $startColor 0%,$endColor 100%);
-            background: linear-gradient(to bottom,  $startColor 0%,$endColor 100%);
-         }
+         .card-subtitle:after { 
+         line-height: 0.9em;
+         }   
       }
       
    }
@@ -363,14 +360,16 @@ $hotelPricePadding:6px;
 .hotel-price {
     background-color: rgba(255, 255, 255, 0.85);
     bottom: 11px;
-    height: $priceHeight;
+    height: auto;
     padding: 0 $hotelPricePadding;
     position: absolute;
     right: 0;
+    text-align:right;
 }
 .hotel-price-original {
     color: #999999;
     font-size: 18px;
+    text-decoration: line-through;
 }
 .hotel-price-discount {
     font-size: 30px;
@@ -593,8 +592,10 @@ display: none;
    margin: 6px 0;
 }
 .hdp-hotel-name .name {
-   font-size: 22px;
-   margin : 0 8px 0 0;
+   font-size: 25px;
+   margin: 0 8px 0 0;
+   font-weight: 400;
+   color:#222;
 }
 
 #stay-parameters {
@@ -672,7 +673,6 @@ display: none;
    content: none;
 }
 
-
 /*ROOMS*/
 .rooms-list {
    width: 100%;
@@ -688,8 +688,10 @@ display: none;
 }
 
 .room-strip-photo {
-   background-color: orange;
-   height: 85px;
+   background-image: url('images/roomphotostandard.png') !important;
+   background-size: 100%;
+   background-repeat:no-repeat;
+   height:92px;
 }
 
 .room-strip.photo .room-strip-info,
@@ -703,10 +705,13 @@ display: none;
 }
 
 .room-strip-info p {
-   margin: 6px 0;
+   margin: 0;
+   font-weight: 400;
 }
 .room-name {
-   color: #222;
+ color: #222;
+line-height: 18px;
+   margin: 0 0 10px;
 }
 p.room-strip-discount,
 p.romm-strip-price {
@@ -717,10 +722,11 @@ p.romm-strip-price {
    font-style: italic;
    font-weight: 100;
    font-size: 13px;
+   margin:5px 0 0;
 }
 .romm-strip-price {
    font-weight: 400;
-   font-size: 16px;
+   font-size: 23px;
 }
 p.romm-strip-price {
    margin: -5px 0 0 0;
@@ -736,7 +742,7 @@ and (orientation : landscape)
    .topcoat-list__item {
       height: $squaredCard;
       width: $squaredCard;
-      margin: 13px 16px;
+      margin: 13px 0 0 13px;
       float: left;
       clear: none;
    }
@@ -778,7 +784,7 @@ and (orientation : landscape)
    }
    .card-subtitle:before {
        background-color: #000000;
-       bottom: -($arrowWidth / 2);
+       bottom: -($arrowWidth / 3);
        content: "";
        height: 0;
        left: -19px;
@@ -851,3 +857,21 @@ and (orientation : landscape)
          top:0;
       }
    }
+
+   
+   #book-now {
+      background-color:#0bb713;
+      margin: 35px 0 0;
+}
+
+#book-now a {
+   display:block;
+}
+   
+#book-now a p {
+   background: url("images/phone.png") scroll no-repeat left 12px #0bb713 !important;
+padding: 13px 0;
+font-size: 29px !important;
+font-weight: 100 !important;
+   margin:0;
+}
