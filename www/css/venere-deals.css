@@ -833,7 +833,7 @@ p.romm-strip-price {
   .topcoat-list__item {
     height: 135px;
     width: 135px;
-    margin: 13px 16px;
+    margin: 13px 10px;
     float: left;
     clear: none; }
 
@@ -842,7 +842,7 @@ p.romm-strip-price {
 
   .list li:last-child,
   .topcoat-list__item:last-child {
-    margin: 13px 16px; }
+    margin: 13px 10px; }
 
   .card-pic {
     border-top: none;

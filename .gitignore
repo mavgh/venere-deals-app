@@ -5,3 +5,4 @@ node_modules
 /plugins/wp8.json
 Thumbs.db
 /plugins/android.json
+/platforms/ios/

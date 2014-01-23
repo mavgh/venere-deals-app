@@ -45,11 +45,11 @@ var platformDir = {
       "icon-76-2x.png": "icon-76@2x.png",
 
       // "screen-iphone-landscape.png": "Default~iphone.png",
-      "screen-ipad-portrait.png": "Default-Portrait~ipad.png",
-      "screen-ipad-portrait-2x.png": "Default-Portrait@2x~ipad.png",
+      //"screen-ipad-portrait.png": "Default-Portrait~ipad.png",
+      //"screen-ipad-portrait-2x.png": "Default-Portrait@2x~ipad.png",
 
-      "screen-ipad-landscape-2x.png": "Default-Landscape@2x~ipad.png",
-      "screen-ipad-landscape.png": "Default-Landscape~ipad.png",
+      //"screen-ipad-landscape-2x.png": "Default-Landscape@2x~ipad.png",
+      //"screen-ipad-landscape.png": "Default-Landscape~ipad.png",
 
       "screen-iphone-portrait.png": "Default~iphone.png",
       "screen-iphone-portrait-2x.png": "Default@2x~iphone.png",
@@ -199,6 +199,11 @@ projectConfig.doc.findall('splash').map(function (node) {
       copyAsset('splash', { attrib: { 'gap:platform': 'wp8', src: node.attrib.src + 'wp8/SplashScreenImage.jpg' } });
     }
     if (~projectPlatforms.indexOf('ios')) {
+	copyAsset('splash', { attrib: { 'gap:platform': 'ios', src: node.attrib.src + 'ios/screen-iphone-portrait.png' } });	
+	copyAsset('splash', { attrib: { 'gap:platform': 'ios', src: node.attrib.src + 'ios/screen-iphone-portrait-568h-2x.png' } });	
+		copyAsset('splash', { attrib: { 'gap:platform': 'ios', src: node.attrib.src + 'ios/screen-iphone-portrait-2x.png' } });	
+
+
     }
 
   } else {
