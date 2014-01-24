@@ -709,8 +709,9 @@ display: none;
   margin: -9px 0 0 4px; }
 
 #overview {
-  margin: 0 13px; }
+  margin: 0 10px; }
 
+#overview
 #gallery {
   height: 212px; }
 
@@ -745,7 +746,8 @@ display: none;
   margin-left: 50%;
   left: 12px;
   min-width: 30%;
-  max-width: 35%; }
+  max-width: 35%;
+  font-size: 28px; }
 
 .hdp .topcoat-list__item:before {
   content: none; }
@@ -764,8 +766,7 @@ display: none;
   width: auto; }
 
 .room-strip-photo {
-  background-image: url("images/roomphotostandard.png") !important;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 92px; }
 
@@ -807,20 +808,15 @@ p.romm-strip-price {
 
 /*DEAL CARDS LANDSCAPE*/
 @media screen and (orientation: landscape) {
-  .list li,
-  .topcoat-list__item {
+  .list li {
     height: 135px;
     width: 135px;
     margin: 13px 0 0 13px;
     float: left;
     clear: none; }
 
-  .topcoat-list__item:before {
-    content: none; }
-
-  .list li:last-child,
-  .topcoat-list__item:last-child {
-    margin: 13px 10px; }
+  .list li:last-child {
+    margin: 13px 16px; }
 
   .card-pic {
     border-top: none;
@@ -909,15 +905,144 @@ p.romm-strip-price {
   .card-subtitle:after {
     top: 0; } }
 #book-now {
-  background-color: #0bb713;
+  background-color: #0bb713 !important;
   margin: 35px 0 0; }
 
 #book-now a {
   display: block; }
 
 #book-now a p {
-  background: url("images/phone.png") scroll no-repeat left 12px #0bb713 !important;
-  padding: 13px 0;
+  background: url("images/phone.png") scroll no-repeat left center #0bb713 !important;
+  padding: 32px 0 35px 80px;
   font-size: 29px !important;
   font-weight: 100 !important;
-  margin: 0; }
+  margin: 0;
+  display: inline-block; }
+
+/*ADDRESS*/
+#address {
+  font-size: 20px;
+  font-style: italic;
+  text-align: right;
+  padding: 0 0.5em 0.4em 0; }
+
+/*RATING BARS*/
+.rating-bar {
+  padding: 10px 3px 10px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  height: inherit;
+  text-align: right;
+  margin: 0 0 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; }
+
+#rating-bar-container {
+  display: inline-block;
+  width: 160px;
+  padding: 2px 5px; }
+
+.rating-bar p {
+  display: block;
+  margin: 0 28px 0 0;
+  padding: 0 0 0 0;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: right;
+  width: 98%;
+  font-style: italic; }
+
+.rating-bar span {
+  display: block;
+  height: 25px;
+  box-shadow: 5px 3px 4px rgba(0, 0, 0, 0.2); }
+
+.rating-bar-mask {
+  background: url("images/ratingmask.png") scroll no-repeat left center transparent !important;
+  width: 161px;
+  height: 25px;
+  z-index: 999;
+  position: absolute;
+  top: inherit;
+  left: inherit; }
+
+/* Used to color the bars */
+.orange {
+  background: #f80; }
+
+/* .rate-n, n being the rating from 1 to 10 */
+.rate-1 {
+  width: 10%; }
+
+.rate-2 {
+  width: 20%; }
+
+.rate-3 {
+  width: 30%; }
+
+.rate-4 {
+  width: 40%; }
+
+.rate-5 {
+  width: 50%; }
+
+.rate-6 {
+  width: 60%; }
+
+.rate-7 {
+  width: 70%; }
+
+.rate-8 {
+  width: 80%; }
+
+.rate-9 {
+  width: 90%; }
+
+.rate-10 {
+  width: 100%; }
+
+/* CSS3 Animation */
+.animate {
+  animation: progress 2s linear;
+  -moz-animation: progress 2s linear;
+  -webkit-animation: progress 2s linear;
+  -ms-animation: progress 2s linear;
+  -o-animation: progress 2s linear; }
+
+/* Span fills 100% of parent div (.rate-n) which may be 10-100% of the width of black bar (.rating) */
+@-webkit-keyframes progress {
+  from {
+    width: 0%; }
+
+  to {
+    width: 100%; } }
+
+@-moz-keyframes progress {
+  from {
+    width: 0%; }
+
+  to {
+    width: 100%; } }
+
+@-ms-keyframes progress {
+  from {
+    width: 0%; }
+
+  to {
+    width: 100%; } }
+
+@-o-keyframes progress {
+  from {
+    width: 0%; }
+
+  to {
+    width: 100%; } }
+
+@keyframes progress {
+  from {
+    width: 0%; }
+
+  to {
+    width: 100%; } }

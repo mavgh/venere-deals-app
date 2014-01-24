@@ -15,7 +15,6 @@
       <div id="stay-parameters">
          <p id="dates" class="vicons-calendar"><span id="check-in">February 22</span> - <span id="check-out">February 23</span></p>
          <p id="guest-rooms" class="vicons-guests"><span id="rooms-number">1 room</span> <span id="occupancy">(2 adults, 0 children)</span></p>
-         <p>User Rating {{catalogue.userRating}} -  {{catalogue.userRatingRounded}}</p>
       </div>
    </div>
    
@@ -31,7 +30,7 @@
             <span class="hotel-price-label">from</span>
             <span class="hotel-price-discount">€{{ detail.AvailStays.AvailStay.[0].PriceInfo.displayPrice }}</span>
          </div>         
-         <div class="hotel-dealInfo vicons-labelhollow"><span class="tableFix"><span class="tb"><span class="tc">{{ detail.PropertyDetails.address }}</span></span></span></div>
+         <div class="hotel-dealInfo vicons-labelhollow"><span class="tableFix"><span class="tb"><span class="tc">DEAL!</span></span></span></div>
       </div>
     <div class="topcoat-list list rooms-list">
     {{#each detail.AvailStays.AvailStay}}
@@ -45,6 +44,19 @@
         </div>
     {{/each}}
     </div>
+    <div class="rating-bar">
+       <p>User Rating {{catalogue.userRating}} </p> 
+       <div id="rating-bar-container">
+         <div class="rating-bar-mask"></div>
+         <div class="rate-{{catalogue.userRatingRounded}}">
+           <span class="animate orange"></span>
+         </div>
+       </div>   
+      </div>
+    </div> 
+   <div id="address">
+      {{ detail.PropertyDetails.address }} - Città
+   </div>
     <div id="map-canvas" style="height: 200px; width: 100%;">&nbsp;</div>
     <div id="book-now" style="background-color: green;text-align: center;font-size: larger;font-weight: bold;color: white;">
         <a href="tel:0291483082"><p>Book Now</p></a>
