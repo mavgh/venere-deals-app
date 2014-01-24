@@ -47,6 +47,10 @@ define(function(require) {
             {
                 result["RoomMainImageURL"]=result["RoomImageURL"][0];
             }
+            if (result["userRating"]!==undefined && !isNaN(parseFloat(result["userRating"])))
+            {
+                result["userRatingRounded"]=Math.round(parseFloat(result["userRating"]));
+            }
             return result;
         },
         fetch: function(options) {
